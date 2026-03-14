@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -18,12 +18,12 @@
     *::after {
       box-sizing: border-box;
       margin: 0;
-      padding: 0
+      padding: 0;
     }
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px
+      font-size: 16px;
     }
 
     :root {
@@ -47,7 +47,11 @@
     body {
       background: var(--black);
       color: var(--text);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
       font-size: 1rem;
       line-height: 1.6;
       overflow-x: hidden;
@@ -57,27 +61,27 @@
 
     a {
       text-decoration: none;
-      color: inherit
+      color: inherit;
     }
 
     ul,
     ol {
-      list-style: none
+      list-style: none;
     }
 
     button {
       cursor: pointer;
-      font-family: inherit
+      font-family: inherit;
     }
 
     img {
       display: block;
-      max-width: 100%
+      max-width: 100%;
     }
 
     pre,
     code {
-      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace
+      font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
     }
 
     /* ═══════════════════════════════════════
@@ -120,18 +124,18 @@
     .nav-center a {
       font-size: clamp(12px, 1.4vw, 13.5px);
       color: var(--muted);
-      transition: color .18s;
+      transition: color 0.18s;
       white-space: nowrap;
     }
 
     .nav-center a:hover {
-      color: #fff
+      color: #fff;
     }
 
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 6px
+      gap: 6px;
     }
 
     .nav-login {
@@ -140,12 +144,12 @@
       background: none;
       border: none;
       padding: 6px 10px;
-      transition: color .18s;
+      transition: color 0.18s;
       white-space: nowrap;
     }
 
     .nav-login:hover {
-      color: #fff
+      color: #fff;
     }
 
     .nav-gh {
@@ -159,13 +163,13 @@
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 7px;
       padding: 6px 13px;
-      transition: all .18s;
+      transition: all 0.18s;
       white-space: nowrap;
     }
 
     .nav-gh:hover {
       background: #222;
-      border-color: rgba(255, 255, 255, 0.28)
+      border-color: rgba(255, 255, 255, 0.28);
     }
 
     /* Mobile menu button */
@@ -184,7 +188,7 @@
       height: 1.5px;
       background: rgba(255, 255, 255, 0.7);
       border-radius: 2px;
-      transition: all .2s;
+      transition: all 0.2s;
     }
 
     /* Mobile nav drawer */
@@ -203,7 +207,7 @@
     }
 
     .nav-drawer.open {
-      display: flex
+      display: flex;
     }
 
     .nav-drawer a,
@@ -215,12 +219,12 @@
       border: none;
       text-align: left;
       border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-      transition: color .18s;
+      transition: color 0.18s;
     }
 
     .nav-drawer a:hover,
     .nav-drawer button:hover {
-      color: #fff
+      color: #fff;
     }
 
     /* ═══════════════════════════════════════
@@ -244,8 +248,10 @@
       width: min(1000px, 140vw);
       height: min(560px, 70vw);
       background: radial-gradient(ellipse at 50% 82%,
-          rgba(185, 95, 12, 0.54) 0%, rgba(150, 76, 8, 0.3) 28%,
-          rgba(90, 45, 4, 0.12) 55%, transparent 72%);
+          rgba(185, 95, 12, 0.54) 0%,
+          rgba(150, 76, 8, 0.3) 28%,
+          rgba(90, 45, 4, 0.12) 55%,
+          transparent 72%);
       pointer-events: none;
       z-index: 0;
     }
@@ -255,7 +261,7 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      overflow: hidden
+      overflow: hidden;
     }
 
     .star {
@@ -269,13 +275,13 @@
 
       0%,
       100% {
-        opacity: .15;
-        transform: scale(1)
+        opacity: 0.15;
+        transform: scale(1);
       }
 
       50% {
-        opacity: .85;
-        transform: scale(1.6)
+        opacity: 0.85;
+        transform: scale(1.6);
       }
     }
 
@@ -306,42 +312,45 @@
       cursor: pointer;
       position: relative;
       overflow: hidden;
-      transition: border-color .2s;
-      animation: bfade .7s ease both;
+      transition: border-color 0.2s;
+      animation: bfade 0.7s ease both;
     }
 
     .hero-badge::before {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.09), transparent);
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(255, 255, 255, 0.09),
+          transparent);
       transform: translateX(-100%);
       animation: shimmer 3.8s ease infinite 1.2s;
     }
 
     @keyframes shimmer {
       0% {
-        transform: translateX(-100%)
+        transform: translateX(-100%);
       }
 
       60%,
       100% {
-        transform: translateX(100%)
+        transform: translateX(100%);
       }
     }
 
     .hero-badge:hover {
-      border-color: rgba(255, 255, 255, 0.26)
+      border-color: rgba(255, 255, 255, 0.26);
     }
 
     .badge-spark {
       color: #d97706;
-      font-size: 11px
+      font-size: 11px;
     }
 
     .badge-arrow {
       color: rgba(255, 255, 255, 0.35);
-      margin-left: 2px
+      margin-left: 2px;
     }
 
     /* Headline — exact font weight 800 matching screenshot */
@@ -352,12 +361,12 @@
       letter-spacing: -0.04em;
       color: #fff;
       margin-bottom: clamp(16px, 2.5vh, 22px);
-      animation: bfade .7s ease .08s both;
+      animation: bfade 0.7s ease 0.08s both;
     }
 
     /* Second line slightly dimmer like the screenshot */
     .hero-h1 span {
-      color: rgba(255, 255, 255, 0.6)
+      color: rgba(255, 255, 255, 0.6);
     }
 
     .hero-p {
@@ -366,7 +375,7 @@
       max-width: min(480px, 90vw);
       line-height: 1.65;
       margin-bottom: clamp(28px, 4vh, 36px);
-      animation: bfade .7s ease .16s both;
+      animation: bfade 0.7s ease 0.16s both;
     }
 
     /* Badge row */
@@ -377,7 +386,7 @@
       justify-content: center;
       gap: 8px;
       margin-bottom: clamp(24px, 3.5vh, 32px);
-      animation: bfade .7s ease .22s both;
+      animation: bfade 0.7s ease 0.22s both;
     }
 
     .htag {
@@ -397,25 +406,25 @@
     .htag.blue {
       color: #60a5fa;
       border-color: rgba(96, 165, 250, 0.25);
-      background: rgba(96, 165, 250, 0.07)
+      background: rgba(96, 165, 250, 0.07);
     }
 
     .htag.green {
       color: #4ade80;
       border-color: rgba(74, 222, 128, 0.25);
-      background: rgba(74, 222, 128, 0.07)
+      background: rgba(74, 222, 128, 0.07);
     }
 
     .htag.amber {
       color: #fbbf24;
       border-color: rgba(251, 191, 36, 0.25);
-      background: rgba(251, 191, 36, 0.07)
+      background: rgba(251, 191, 36, 0.07);
     }
 
     .htag.purple {
       color: #a78bfa;
       border-color: rgba(167, 139, 250, 0.25);
-      background: rgba(167, 139, 250, 0.07)
+      background: rgba(167, 139, 250, 0.07);
     }
 
     /* CTA button */
@@ -431,23 +440,23 @@
       border: 1px solid rgba(255, 255, 255, 0.28);
       border-radius: 9999px;
       cursor: pointer;
-      transition: all .2s;
-      animation: bfade .7s ease .3s both;
+      transition: all 0.2s;
+      animation: bfade 0.7s ease 0.3s both;
     }
 
     .hero-btn:hover {
       background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.5)
+      border-color: rgba(255, 255, 255, 0.5);
     }
 
     .hero-btn-arr {
-      transition: transform .2s;
-      opacity: .55
+      transition: transform 0.2s;
+      opacity: 0.55;
     }
 
     .hero-btn:hover .hero-btn-arr {
       transform: translateX(3px);
-      opacity: 1
+      opacity: 1;
     }
 
     /* Code block hero */
@@ -457,7 +466,7 @@
       margin-top: clamp(36px, 5vh, 52px);
       width: 100%;
       max-width: min(580px, 95vw);
-      animation: bfade .9s ease .38s both;
+      animation: bfade 0.9s ease 0.38s both;
     }
 
     .code-block {
@@ -466,7 +475,9 @@
       border-radius: 12px;
       padding: 0;
       overflow: hidden;
-      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 0 -20px 60px rgba(0, 0, 0, 0.6);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.03),
+        0 -20px 60px rgba(0, 0, 0, 0.6);
     }
 
     .code-bar {
@@ -480,31 +491,31 @@
 
     .code-dots {
       display: flex;
-      gap: 6px
+      gap: 6px;
     }
 
     .cd {
       width: 10px;
       height: 10px;
-      border-radius: 50%
+      border-radius: 50%;
     }
 
     .cd.r {
-      background: #ff5f56
+      background: #ff5f56;
     }
 
     .cd.y {
-      background: #ffbd2e
+      background: #ffbd2e;
     }
 
     .cd.g {
-      background: #27c93f
+      background: #27c93f;
     }
 
     .code-label {
       font-size: 11px;
       color: rgba(255, 255, 255, 0.25);
-      font-weight: 500
+      font-weight: 500;
     }
 
     .code-copy {
@@ -515,35 +526,35 @@
       cursor: pointer;
       padding: 2px 7px;
       border-radius: 4px;
-      transition: all .15s;
+      transition: all 0.15s;
     }
 
     .code-copy:hover {
       background: rgba(255, 255, 255, 0.06);
-      color: rgba(255, 255, 255, 0.7)
+      color: rgba(255, 255, 255, 0.7);
     }
 
     .code-body {
       padding: 16px 18px;
       font-size: clamp(12px, 1.3vw, 13px);
       line-height: 1.65;
-      color: rgba(255, 255, 255, 0.7)
+      color: rgba(255, 255, 255, 0.7);
     }
 
     .code-body .prompt {
-      color: rgba(255, 255, 255, 0.2)
+      color: rgba(255, 255, 255, 0.2);
     }
 
     .code-body .cmd {
-      color: #4ade80
+      color: #4ade80;
     }
 
     .code-body .flag {
-      color: #93c5fd
+      color: #93c5fd;
     }
 
     .code-body .out {
-      color: rgba(255, 255, 255, 0.35)
+      color: rgba(255, 255, 255, 0.35);
     }
 
     /* Stat pills */
@@ -555,7 +566,7 @@
       margin-top: clamp(24px, 3.5vh, 36px);
       z-index: 1;
       position: relative;
-      animation: bfade .9s ease .5s both;
+      animation: bfade 0.9s ease 0.5s both;
       padding-bottom: clamp(48px, 7vh, 80px);
     }
 
@@ -574,27 +585,27 @@
       font-size: clamp(22px, 3vw, 32px);
       font-weight: 800;
       letter-spacing: -0.03em;
-      color: #fff
+      color: #fff;
     }
 
     .stat-lbl {
       font-size: clamp(10px, 1.2vw, 12px);
       color: var(--muted);
       margin-top: 2px;
-      text-align: center
+      text-align: center;
     }
 
     @keyframes bfade {
       from {
         opacity: 0;
         filter: blur(5px);
-        transform: translateY(-10px)
+        transform: translateY(-10px);
       }
 
       to {
         opacity: 1;
         filter: blur(0);
-        transform: translateY(0)
+        transform: translateY(0);
       }
     }
 
@@ -603,14 +614,14 @@
 ═══════════════════════════════════════ */
     .logos-sec {
       padding: clamp(40px, 6vh, 60px) 0 0;
-      overflow: hidden
+      overflow: hidden;
     }
 
     .logos-label {
       text-align: center;
       font-size: 10.5px;
       font-weight: 700;
-      letter-spacing: .14em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.18);
       margin-bottom: 28px;
@@ -631,21 +642,23 @@
       justify-content: center;
       padding: clamp(8px, 1vw, 0px) clamp(20px, 3.5vw, 48px);
       height: 44px;
-      opacity: .36;
+      opacity: 0.36;
       filter: grayscale(1) brightness(2);
-      transition: opacity .28s, filter .28s;
+      transition:
+        opacity 0.28s,
+        filter 0.28s;
       cursor: default;
     }
 
     .logo-it:hover {
-      opacity: .82;
-      filter: grayscale(0) brightness(1.1)
+      opacity: 0.82;
+      filter: grayscale(0) brightness(1.1);
     }
 
     .logo-it img {
       height: 18px;
       width: auto;
-      object-fit: contain
+      object-fit: contain;
     }
 
     /* Arc dome */
@@ -654,7 +667,7 @@
       width: 100%;
       height: clamp(160px, 22vw, 290px);
       overflow: hidden;
-      margin-top: -10px
+      margin-top: -10px;
     }
 
     .arc-el {
@@ -667,8 +680,10 @@
       border-radius: 50%;
       border: 1px solid rgba(255, 255, 255, 0.07);
       background: radial-gradient(ellipse at 50% 90%,
-          rgba(185, 92, 12, 0.52) 0%, rgba(140, 70, 8, 0.28) 28%,
-          rgba(75, 38, 4, 0.11) 52%, transparent 70%);
+          rgba(185, 92, 12, 0.52) 0%,
+          rgba(140, 70, 8, 0.28) 28%,
+          rgba(75, 38, 4, 0.11) 52%,
+          transparent 70%);
       pointer-events: none;
     }
 
@@ -678,21 +693,21 @@
     .section {
       padding: clamp(60px, 9vh, 96px) clamp(16px, 4vw, 40px);
       max-width: 1240px;
-      margin: 0 auto
+      margin: 0 auto;
     }
 
     .section-inner {
       max-width: 1200px;
-      margin: 0 auto
+      margin: 0 auto;
     }
 
     .sec-eyebrow {
       font-size: clamp(11px, 1.3vw, 13px);
       font-weight: 600;
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
       color: rgba(255, 255, 255, 0.3);
       margin-bottom: 8px;
-      letter-spacing: .02em;
+      letter-spacing: 0.02em;
     }
 
     .sec-h2 {
@@ -715,7 +730,7 @@
    FEATURES GRID
 ═══════════════════════════════════════ */
     .feat-header {
-      margin-bottom: clamp(36px, 5vh, 56px)
+      margin-bottom: clamp(36px, 5vh, 56px);
     }
 
     .feat-grid {
@@ -731,20 +746,24 @@
       padding: clamp(20px, 2.5vw, 26px);
       position: relative;
       overflow: hidden;
-      transition: border-color .2s, transform .2s;
+      transition:
+        border-color 0.2s,
+        transform 0.2s;
     }
 
     .fcard:hover {
       border-color: var(--border2);
-      transform: translateY(-2px)
+      transform: translateY(-2px);
     }
 
     /* Subtle gradient glow on hover */
     .fcard::after {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.02), transparent 60%);
+      background: radial-gradient(circle at 30% 30%,
+          rgba(255, 255, 255, 0.02),
+          transparent 60%);
       pointer-events: none;
     }
 
@@ -765,20 +784,20 @@
       font-weight: 700;
       color: #fff;
       margin-bottom: 6px;
-      letter-spacing: -.015em
+      letter-spacing: -0.015em;
     }
 
     .fc-desc {
       font-size: clamp(12px, 1.3vw, 13.5px);
       color: rgba(255, 255, 255, 0.42);
       line-height: 1.58;
-      margin-bottom: 14px
+      margin-bottom: 14px;
     }
 
     .fc-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 5px
+      gap: 5px;
     }
 
     .ftag {
@@ -789,43 +808,43 @@
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: rgba(255, 255, 255, 0.5);
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
     }
 
     .ftag.blue {
       color: #60a5fa;
       border-color: rgba(96, 165, 250, 0.2);
-      background: rgba(96, 165, 250, 0.07)
+      background: rgba(96, 165, 250, 0.07);
     }
 
     .ftag.green {
       color: #4ade80;
       border-color: rgba(74, 222, 128, 0.2);
-      background: rgba(74, 222, 128, 0.07)
+      background: rgba(74, 222, 128, 0.07);
     }
 
     .ftag.amber {
       color: #fbbf24;
       border-color: rgba(251, 191, 36, 0.2);
-      background: rgba(251, 191, 36, 0.07)
+      background: rgba(251, 191, 36, 0.07);
     }
 
     .ftag.purple {
       color: #a78bfa;
       border-color: rgba(167, 139, 250, 0.2);
-      background: rgba(167, 139, 250, 0.07)
+      background: rgba(167, 139, 250, 0.07);
     }
 
     .ftag.cyan {
       color: #67e8f9;
       border-color: rgba(103, 232, 249, 0.2);
-      background: rgba(103, 232, 249, 0.07)
+      background: rgba(103, 232, 249, 0.07);
     }
 
     .ftag.red {
       color: #f87171;
       border-color: rgba(248, 113, 113, 0.2);
-      background: rgba(248, 113, 113, 0.07)
+      background: rgba(248, 113, 113, 0.07);
     }
 
     /* ═══════════════════════════════════════
@@ -838,9 +857,9 @@
       margin-top: clamp(32px, 4.5vh, 48px);
     }
 
-    @media(max-width:700px) {
+    @media (max-width: 700px) {
       .arch-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
       }
     }
 
@@ -856,9 +875,9 @@
       font-weight: 600;
       color: rgba(255, 255, 255, 0.45);
       text-transform: uppercase;
-      letter-spacing: .08em;
+      letter-spacing: 0.08em;
       margin-bottom: 20px;
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
     }
 
     .arch-layer {
@@ -871,49 +890,49 @@
     .arch-layer.top {
       background: rgba(167, 139, 250, 0.12);
       border: 1px solid rgba(167, 139, 250, 0.2);
-      color: #c4b5fd
+      color: #c4b5fd;
     }
 
     .arch-layer.model {
       background: rgba(96, 165, 250, 0.1);
       border: 1px solid rgba(96, 165, 250, 0.18);
-      color: #93c5fd
+      color: #93c5fd;
     }
 
     .arch-layer.layer {
       background: rgba(74, 222, 128, 0.08);
       border: 1px solid rgba(74, 222, 128, 0.15);
-      color: #86efac
+      color: #86efac;
     }
 
     .arch-layer.tensor {
       background: rgba(251, 191, 36, 0.08);
       border: 1px solid rgba(251, 191, 36, 0.15);
-      color: #fde68a
+      color: #fde68a;
     }
 
     .arch-layer.backend {
       background: rgba(248, 113, 113, 0.08);
       border: 1px solid rgba(248, 113, 113, 0.15);
-      color: #fca5a5
+      color: #fca5a5;
     }
 
     .arch-layer-sub {
       font-size: 10.5px;
       color: rgba(255, 255, 255, 0.28);
-      margin-top: 2px
+      margin-top: 2px;
     }
 
     .arch-arrow {
       text-align: center;
       color: rgba(255, 255, 255, 0.15);
       font-size: 16px;
-      margin: 2px 0
+      margin: 2px 0;
     }
 
     .arch-backends {
       display: grid;
-      gap: clamp(10px, 1.5vw, 14px)
+      gap: clamp(10px, 1.5vw, 14px);
     }
 
     .backend-card {
@@ -921,40 +940,40 @@
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: clamp(18px, 2.5vw, 24px);
-      transition: border-color .2s;
+      transition: border-color 0.2s;
     }
 
     .backend-card:hover {
-      border-color: var(--border2)
+      border-color: var(--border2);
     }
 
     .bc-head {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 10px
+      margin-bottom: 10px;
     }
 
     .bc-dot {
       width: 9px;
       height: 9px;
       border-radius: 50%;
-      flex-shrink: 0
+      flex-shrink: 0;
     }
 
     .bc-dot.v {
-      background: #a78bfa
+      background: #a78bfa;
     }
 
     .bc-dot.c {
-      background: #22c55e
+      background: #22c55e;
     }
 
     .bc-title {
       font-size: clamp(13px, 1.5vw, 15px);
       font-weight: 700;
       color: #fff;
-      letter-spacing: -.01em
+      letter-spacing: -0.01em;
     }
 
     .bc-badge {
@@ -962,25 +981,25 @@
       font-weight: 600;
       padding: 2px 7px;
       border-radius: 4px;
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
     }
 
     .bc-badge.v {
       background: rgba(167, 139, 250, 0.12);
       color: #c4b5fd;
-      border: 1px solid rgba(167, 139, 250, 0.2)
+      border: 1px solid rgba(167, 139, 250, 0.2);
     }
 
     .bc-badge.c {
       background: rgba(34, 197, 94, 0.1);
       color: #86efac;
-      border: 1px solid rgba(34, 197, 94, 0.2)
+      border: 1px solid rgba(34, 197, 94, 0.2);
     }
 
     .bc-desc {
       font-size: clamp(12px, 1.3vw, 13px);
       color: rgba(255, 255, 255, 0.4);
-      line-height: 1.6
+      line-height: 1.6;
     }
 
     /* ═══════════════════════════════════════
@@ -994,9 +1013,9 @@
       align-items: start;
     }
 
-    @media(max-width:860px) {
+    @media (max-width: 860px) {
       .docs-layout {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1009,10 +1028,10 @@
       padding: clamp(14px, 2vw, 20px);
     }
 
-    @media(max-width:860px) {
+    @media (max-width: 860px) {
       .docs-sidebar {
         position: static;
-        display: none
+        display: none;
       }
     }
 
@@ -1020,16 +1039,16 @@
       font-size: 11px;
       font-weight: 700;
       color: rgba(255, 255, 255, 0.35);
-      letter-spacing: .1em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 12px;
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
     }
 
     .ds-links {
       display: flex;
       flex-direction: column;
-      gap: 2px
+      gap: 2px;
     }
 
     .ds-link {
@@ -1037,20 +1056,20 @@
       color: rgba(255, 255, 255, 0.45);
       padding: 6px 8px;
       border-radius: 6px;
-      transition: all .15s;
+      transition: all 0.15s;
       cursor: pointer;
     }
 
     .ds-link:hover,
     .ds-link.on {
       background: rgba(255, 255, 255, 0.06);
-      color: rgba(255, 255, 255, 0.88)
+      color: rgba(255, 255, 255, 0.88);
     }
 
     .docs-content {
       display: flex;
       flex-direction: column;
-      gap: clamp(24px, 3.5vh, 32px)
+      gap: clamp(24px, 3.5vh, 32px);
     }
 
     .doc-block {
@@ -1066,13 +1085,13 @@
       font-weight: 700;
       color: #fff;
       margin-bottom: 4px;
-      letter-spacing: -.02em;
+      letter-spacing: -0.02em;
     }
 
     .doc-block-file {
       font-size: 11.5px;
       color: rgba(255, 255, 255, 0.28);
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
       margin-bottom: 14px;
     }
 
@@ -1080,7 +1099,7 @@
       font-size: clamp(12px, 1.4vw, 13.5px);
       color: rgba(255, 255, 255, 0.45);
       line-height: 1.6;
-      margin-bottom: 18px
+      margin-bottom: 18px;
     }
 
     /* Code snippet */
@@ -1104,7 +1123,7 @@
     .cs-fname {
       font-size: 11px;
       color: rgba(255, 255, 255, 0.22);
-      font-family: 'SF Mono', 'Fira Code', monospace
+      font-family: "SF Mono", "Fira Code", monospace;
     }
 
     .cs-body {
@@ -1113,49 +1132,49 @@
       line-height: 1.7;
       color: rgba(255, 255, 255, 0.65);
       overflow-x: auto;
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
     }
 
     .cs-body::-webkit-scrollbar {
-      height: 4px
+      height: 4px;
     }
 
     .cs-body::-webkit-scrollbar-track {
-      background: transparent
+      background: transparent;
     }
 
     .cs-body::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.1);
-      border-radius: 4px
+      border-radius: 4px;
     }
 
     .tok-kw {
-      color: #c084fc
+      color: #c084fc;
     }
 
     .tok-fn {
-      color: #60a5fa
+      color: #60a5fa;
     }
 
     .tok-str {
-      color: #4ade80
+      color: #4ade80;
     }
 
     .tok-num {
-      color: #fbbf24
+      color: #fbbf24;
     }
 
     .tok-cmt {
       color: rgba(255, 255, 255, 0.22);
-      font-style: italic
+      font-style: italic;
     }
 
     .tok-type {
-      color: #f472b6
+      color: #f472b6;
     }
 
     .tok-op {
-      color: rgba(255, 255, 255, 0.4)
+      color: rgba(255, 255, 255, 0.4);
     }
 
     /* Method/feature tables */
@@ -1163,7 +1182,7 @@
       width: 100%;
       border-collapse: collapse;
       font-size: clamp(11px, 1.3vw, 13px);
-      margin-top: 4px
+      margin-top: 4px;
     }
 
     .doc-table th {
@@ -1172,10 +1191,10 @@
       font-size: 11px;
       font-weight: 600;
       color: rgba(255, 255, 255, 0.3);
-      letter-spacing: .06em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
     }
 
     .doc-table td {
@@ -1187,17 +1206,17 @@
     }
 
     .doc-table tr:last-child td {
-      border-bottom: none
+      border-bottom: none;
     }
 
     .doc-table tr:hover td {
-      background: rgba(255, 255, 255, 0.02)
+      background: rgba(255, 255, 255, 0.02);
     }
 
     .mono {
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
       color: #93c5fd;
-      font-size: .9em
+      font-size: 0.9em;
     }
 
     /* ═══════════════════════════════════════
@@ -1217,29 +1236,29 @@
       padding: clamp(20px, 3vw, 28px);
       position: relative;
       overflow: hidden;
-      transition: border-color .2s;
+      transition: border-color 0.2s;
     }
 
     .demo-card:hover {
-      border-color: var(--border2)
+      border-color: var(--border2);
     }
 
     .demo-head {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 6px
+      margin-bottom: 6px;
     }
 
     .demo-icon {
-      font-size: 20px
+      font-size: 20px;
     }
 
     .demo-title {
       font-size: clamp(15px, 1.8vw, 18px);
       font-weight: 700;
       color: #fff;
-      letter-spacing: -.02em
+      letter-spacing: -0.02em;
     }
 
     .demo-badge {
@@ -1255,14 +1274,14 @@
     .demo-sub {
       font-size: clamp(11.5px, 1.3vw, 13px);
       color: rgba(255, 255, 255, 0.35);
-      margin-bottom: 16px
+      margin-bottom: 16px;
     }
 
     .demo-desc {
       font-size: clamp(12px, 1.4vw, 13.5px);
       color: rgba(255, 255, 255, 0.42);
       line-height: 1.62;
-      margin-bottom: 20px
+      margin-bottom: 20px;
     }
 
     /* Translation display */
@@ -1270,7 +1289,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      margin-bottom: 20px
+      margin-bottom: 20px;
     }
 
     .trans-row {
@@ -1288,27 +1307,27 @@
       font-size: clamp(12px, 1.3vw, 13px);
       color: rgba(255, 255, 255, 0.62);
       flex: 1;
-      min-width: 120px
+      min-width: 120px;
     }
 
     .trans-arrow {
       color: rgba(255, 255, 255, 0.2);
       font-size: 14px;
-      flex-shrink: 0
+      flex-shrink: 0;
     }
 
     .trans-es {
       font-size: clamp(12px, 1.3vw, 13px);
       color: #86efac;
       flex: 1;
-      min-width: 120px
+      min-width: 120px;
     }
 
     /* MNIST stack */
     .model-stack {
       display: flex;
       flex-direction: column;
-      gap: 6px
+      gap: 6px;
     }
 
     .stack-item {
@@ -1339,12 +1358,12 @@
       font-size: clamp(12px, 1.3vw, 13px);
       font-weight: 600;
       color: rgba(255, 255, 255, 0.78);
-      display: block
+      display: block;
     }
 
     .stack-info span {
       font-size: 11.5px;
-      color: rgba(255, 255, 255, 0.35)
+      color: rgba(255, 255, 255, 0.35);
     }
 
     /* ═══════════════════════════════════════
@@ -1357,16 +1376,16 @@
       margin-top: clamp(32px, 4.5vh, 48px);
     }
 
-    @media(max-width:700px) {
+    @media (max-width: 700px) {
       .build-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
       }
     }
 
     .prereq-list {
       display: flex;
       flex-direction: column;
-      gap: clamp(8px, 1.2vh, 10px)
+      gap: clamp(8px, 1.2vh, 10px);
     }
 
     .prereq-item {
@@ -1382,21 +1401,21 @@
     .pi-icon {
       font-size: 16px;
       flex-shrink: 0;
-      margin-top: 1px
+      margin-top: 1px;
     }
 
     .pi-info strong {
       font-size: clamp(12.5px, 1.4vw, 14px);
       font-weight: 600;
       color: #fff;
-      display: block
+      display: block;
     }
 
     .pi-info span {
       font-size: 11.5px;
       color: rgba(255, 255, 255, 0.35);
       display: block;
-      margin-top: 1px
+      margin-top: 1px;
     }
 
     .pi-badge {
@@ -1406,19 +1425,19 @@
       border-radius: 4px;
       font-size: 10.5px;
       font-weight: 600;
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
     }
 
     .pi-badge.req {
       background: rgba(74, 222, 128, 0.1);
       color: #86efac;
-      border: 1px solid rgba(74, 222, 128, 0.18)
+      border: 1px solid rgba(74, 222, 128, 0.18);
     }
 
     .pi-badge.opt {
       background: rgba(251, 191, 36, 0.09);
       color: #fde68a;
-      border: 1px solid rgba(251, 191, 36, 0.18)
+      border: 1px solid rgba(251, 191, 36, 0.18);
     }
 
     .build-steps {
@@ -1433,19 +1452,19 @@
       font-weight: 700;
       color: #fff;
       margin-bottom: 18px;
-      letter-spacing: -.015em
+      letter-spacing: -0.015em;
     }
 
     .step-list {
       display: flex;
       flex-direction: column;
-      gap: clamp(10px, 1.5vh, 14px)
+      gap: clamp(10px, 1.5vh, 14px);
     }
 
     .step-item {
       display: flex;
       align-items: flex-start;
-      gap: 12px
+      gap: 12px;
     }
 
     .step-n {
@@ -1466,12 +1485,12 @@
     .step-txt {
       font-size: clamp(12px, 1.4vw, 13.5px);
       color: rgba(255, 255, 255, 0.55);
-      line-height: 1.55
+      line-height: 1.55;
     }
 
     .step-txt code {
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: .9em;
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 0.9em;
       color: #86efac;
       background: rgba(74, 222, 128, 0.08);
       padding: 1px 5px;
@@ -1499,53 +1518,53 @@
     .term-dot {
       width: 10px;
       height: 10px;
-      border-radius: 50%
+      border-radius: 50%;
     }
 
     .term-dot.r {
-      background: #ff5f56
+      background: #ff5f56;
     }
 
     .term-dot.y {
-      background: #ffbd2e
+      background: #ffbd2e;
     }
 
     .term-dot.g {
-      background: #27c93f
+      background: #27c93f;
     }
 
     .term-body {
       padding: clamp(14px, 2vw, 18px);
       font-size: clamp(11px, 1.2vw, 12.5px);
       line-height: 1.72;
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
       color: rgba(255, 255, 255, 0.62);
       overflow-x: auto;
     }
 
     .term-body::-webkit-scrollbar {
-      height: 4px
+      height: 4px;
     }
 
     .term-body::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.1);
-      border-radius: 4px
+      border-radius: 4px;
     }
 
     .term-prompt {
-      color: rgba(255, 255, 255, 0.25)
+      color: rgba(255, 255, 255, 0.25);
     }
 
     .term-cmd {
-      color: #4ade80
+      color: #4ade80;
     }
 
     .term-out {
-      color: rgba(255, 255, 255, 0.32)
+      color: rgba(255, 255, 255, 0.32);
     }
 
     .term-ok {
-      color: #86efac
+      color: #86efac;
     }
 
     /* ═══════════════════════════════════════
@@ -1562,7 +1581,7 @@
     .file-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: clamp(11.5px, 1.3vw, 13px)
+      font-size: clamp(11.5px, 1.3vw, 13px);
     }
 
     .file-table th {
@@ -1571,11 +1590,11 @@
       font-size: 11px;
       font-weight: 600;
       color: rgba(255, 255, 255, 0.28);
-      letter-spacing: .07em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
       background: #0a0a0a;
       border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
     }
 
     .file-table td {
@@ -1587,17 +1606,17 @@
     }
 
     .file-table tr:last-child td {
-      border-bottom: none
+      border-bottom: none;
     }
 
     .file-table tr:hover td {
-      background: rgba(255, 255, 255, 0.015)
+      background: rgba(255, 255, 255, 0.015);
     }
 
     .file-path {
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
       color: #93c5fd;
-      font-size: .88em
+      font-size: 0.88em;
     }
 
     .file-role {
@@ -1608,31 +1627,31 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: rgba(255, 255, 255, 0.38);
       white-space: nowrap;
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
     }
 
     .file-role.gpu {
       background: rgba(167, 139, 250, 0.1);
       border-color: rgba(167, 139, 250, 0.2);
-      color: #c4b5fd
+      color: #c4b5fd;
     }
 
     .file-role.demo {
       background: rgba(74, 222, 128, 0.08);
       border-color: rgba(74, 222, 128, 0.18);
-      color: #86efac
+      color: #86efac;
     }
 
     .file-role.build {
       background: rgba(251, 191, 36, 0.08);
       border-color: rgba(251, 191, 36, 0.18);
-      color: #fde68a
+      color: #fde68a;
     }
 
     .file-role.found {
       background: rgba(96, 165, 250, 0.08);
       border-color: rgba(96, 165, 250, 0.18);
-      color: #93c5fd
+      color: #93c5fd;
     }
 
     /* ═══════════════════════════════════════
@@ -1642,19 +1661,19 @@
       position: relative;
       overflow: hidden;
       background: var(--black);
-      padding: clamp(40px, 6vh, 60px) 0 0
+      padding: clamp(40px, 6vh, 60px) 0 0;
     }
 
     .igrid-wrap {
       position: relative;
       width: 100%;
       height: clamp(280px, 40vw, 380px);
-      overflow: hidden
+      overflow: hidden;
     }
 
     .igrid-wrap::before,
     .igrid-wrap::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       right: 0;
@@ -1665,13 +1684,13 @@
     .igrid-wrap::before {
       top: 0;
       height: clamp(80px, 15vw, 110px);
-      background: linear-gradient(to bottom, #000, transparent)
+      background: linear-gradient(to bottom, #000, transparent);
     }
 
     .igrid-wrap::after {
       bottom: 0;
       height: clamp(100px, 18vw, 130px);
-      background: linear-gradient(to top, #000, transparent)
+      background: linear-gradient(to top, #000, transparent);
     }
 
     .igrid {
@@ -1682,27 +1701,27 @@
       top: 0;
       left: 0;
       right: 0;
-      padding: 8px 0
+      padding: 8px 0;
     }
 
     .irow {
       display: flex;
       gap: clamp(7px, 1.2vw, 10px);
       width: max-content;
-      animation: iscroll var(--sp, 32s) linear infinite
+      animation: iscroll var(--sp, 32s) linear infinite;
     }
 
     .irow.rev {
-      animation-direction: reverse
+      animation-direction: reverse;
     }
 
     @keyframes iscroll {
       from {
-        transform: translateX(0)
+        transform: translateX(0);
       }
 
       to {
-        transform: translateX(-50%)
+        transform: translateX(-50%);
       }
     }
 
@@ -1720,37 +1739,37 @@
     .itile svg {
       width: clamp(20px, 3.5vw, 26px);
       height: clamp(20px, 3.5vw, 26px);
-      opacity: .32
+      opacity: 0.32;
     }
 
     .itile.c-blue svg {
       color: #60a5fa;
-      opacity: .48
+      opacity: 0.48;
     }
 
     .itile.c-green svg {
       color: #4ade80;
-      opacity: .48
+      opacity: 0.48;
     }
 
     .itile.c-amber svg {
       color: #fbbf24;
-      opacity: .48
+      opacity: 0.48;
     }
 
     .itile.c-pink svg {
       color: #f472b6;
-      opacity: .48
+      opacity: 0.48;
     }
 
     .itile.c-purple svg {
       color: #a78bfa;
-      opacity: .48
+      opacity: 0.48;
     }
 
     .itile.c-cyan svg {
       color: #67e8f9;
-      opacity: .48
+      opacity: 0.48;
     }
 
     .cta-overlay {
@@ -1774,27 +1793,29 @@
       display: grid;
       place-items: center;
       margin-bottom: clamp(14px, 2.5vh, 20px);
-      box-shadow: 0 0 0 6px rgba(10, 10, 10, 0.82), 0 8px 36px rgba(0, 0, 0, 0.6);
+      box-shadow:
+        0 0 0 6px rgba(10, 10, 10, 0.82),
+        0 8px 36px rgba(0, 0, 0, 0.6);
     }
 
     .cta-icon-box svg {
       width: clamp(28px, 4.5vw, 36px);
       height: clamp(28px, 4.5vw, 36px);
-      color: #fff
+      color: #fff;
     }
 
     .cta-h2 {
       font-size: clamp(22px, 4vw, 46px);
       font-weight: 800;
       color: #fff;
-      letter-spacing: -.035em;
-      margin-bottom: 8px
+      letter-spacing: -0.035em;
+      margin-bottom: 8px;
     }
 
     .cta-p {
       font-size: clamp(13px, 1.6vw, 15px);
       color: rgba(255, 255, 255, 0.42);
-      margin-bottom: clamp(20px, 3vh, 28px)
+      margin-bottom: clamp(20px, 3vh, 28px);
     }
 
     .cta-btn {
@@ -1809,31 +1830,31 @@
       border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 9999px;
       cursor: pointer;
-      transition: all .2s;
+      transition: all 0.2s;
     }
 
     .cta-btn:hover {
       background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.45)
+      border-color: rgba(255, 255, 255, 0.45);
     }
 
     .cta-btn svg {
       width: 13px;
       height: 13px;
-      opacity: .55
+      opacity: 0.55;
     }
 
     /* ═══════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════ */
     .footer-outer {
-      background: var(--black)
+      background: var(--black);
     }
 
     .footer {
       padding: clamp(44px, 7vh, 64px) clamp(16px, 4vw, 52px) clamp(28px, 4vh, 36px);
       max-width: 1240px;
-      margin: 0 auto
+      margin: 0 auto;
     }
 
     .foot-grid {
@@ -1843,15 +1864,15 @@
       margin-bottom: clamp(36px, 5vh, 52px);
     }
 
-    @media(max-width:720px) {
+    @media (max-width: 720px) {
       .foot-grid {
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: 1fr 1fr;
       }
     }
 
-    @media(max-width:420px) {
+    @media (max-width: 420px) {
       .foot-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1859,7 +1880,7 @@
       display: flex;
       align-items: center;
       gap: 9px;
-      margin-bottom: 9px
+      margin-bottom: 9px;
     }
 
     .foot-logo-icon {
@@ -1879,40 +1900,40 @@
       font-size: clamp(14px, 1.8vw, 16px);
       font-weight: 700;
       color: #fff;
-      letter-spacing: -.015em
+      letter-spacing: -0.015em;
     }
 
     .foot-tag {
       font-size: clamp(11.5px, 1.3vw, 13px);
       color: rgba(255, 255, 255, 0.28);
       line-height: 1.6;
-      margin-top: 4px
+      margin-top: 4px;
     }
 
     .foot-col-h {
       font-size: 11px;
       font-weight: 700;
       color: rgba(255, 255, 255, 0.44);
-      letter-spacing: .09em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
       margin-bottom: 14px;
-      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-family: "SF Mono", "Fira Code", monospace;
     }
 
     .foot-col-links {
       display: flex;
       flex-direction: column;
-      gap: 11px
+      gap: 11px;
     }
 
     .foot-col-links a {
       font-size: clamp(12px, 1.4vw, 13.5px);
       color: rgba(255, 255, 255, 0.35);
-      transition: color .18s
+      transition: color 0.18s;
     }
 
     .foot-col-links a:hover {
-      color: rgba(255, 255, 255, 0.82)
+      color: rgba(255, 255, 255, 0.82);
     }
 
     .foot-btm {
@@ -1927,7 +1948,7 @@
 
     .foot-socials {
       display: flex;
-      gap: 8px
+      gap: 8px;
     }
 
     .fsocial {
@@ -1939,32 +1960,32 @@
       display: grid;
       place-items: center;
       color: rgba(255, 255, 255, 0.38);
-      transition: all .18s;
+      transition: all 0.18s;
     }
 
     .fsocial:hover {
       background: rgba(255, 255, 255, 0.08);
       color: rgba(255, 255, 255, 0.78);
-      border-color: rgba(255, 255, 255, 0.14)
+      border-color: rgba(255, 255, 255, 0.14);
     }
 
     .fsocial svg {
       width: 13px;
-      height: 13px
+      height: 13px;
     }
 
     .foot-copy {
       font-size: clamp(11.5px, 1.3vw, 13px);
-      color: rgba(255, 255, 255, 0.2)
+      color: rgba(255, 255, 255, 0.2);
     }
 
     .foot-copy a {
       color: rgba(255, 255, 255, 0.38);
-      transition: color .18s
+      transition: color 0.18s;
     }
 
     .foot-copy a:hover {
-      color: rgba(255, 255, 255, 0.75)
+      color: rgba(255, 255, 255, 0.75);
     }
 
     /* ═══════════════════════════════════════
@@ -1973,68 +1994,70 @@
     .rv {
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity .6s ease, transform .6s ease
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
     }
 
     .rv.in {
       opacity: 1;
-      transform: translateY(0)
+      transform: translateY(0);
     }
 
     .rv1 {
-      transition-delay: .06s
+      transition-delay: 0.06s;
     }
 
     .rv2 {
-      transition-delay: .12s
+      transition-delay: 0.12s;
     }
 
     .rv3 {
-      transition-delay: .18s
+      transition-delay: 0.18s;
     }
 
     .rv4 {
-      transition-delay: .24s
+      transition-delay: 0.24s;
     }
 
     /* ═══════════════════════════════════════
    RESPONSIVE BREAKPOINTS
 ═══════════════════════════════════════ */
-    @media(max-width:900px) {
+    @media (max-width: 900px) {
       .nav-center {
-        display: none
+        display: none;
       }
 
       .nav-toggle {
-        display: flex
+        display: flex;
       }
     }
 
-    @media(max-width:600px) {
+    @media (max-width: 600px) {
       .foot-btm {
         flex-direction: column;
-        align-items: flex-start
+        align-items: flex-start;
       }
 
       .docs-layout {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
       }
 
       .file-table td:nth-child(3),
       .file-table th:nth-child(3) {
-        display: none
+        display: none;
       }
     }
 
-    @media(max-width:480px) {
+    @media (max-width: 480px) {
 
       .file-table td:nth-child(2),
       .file-table th:nth-child(2) {
-        display: none
+        display: none;
       }
 
       .demos-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
       }
     }
 
@@ -2043,7 +2066,7 @@
       height: 1px;
       background: rgba(255, 255, 255, 0.05);
       max-width: 1200px;
-      margin: 0 auto
+      margin: 0 auto;
     }
 
     /* ═══════════════════════════════════════
@@ -2105,11 +2128,68 @@
       font-weight: 400;
       letter-spacing: 0.01em;
     }
+
+    /* ═══════════════════════════════════════
+   LIGHT THEME (INVERT BASED)
+═══════════════════════════════════════ */
+    html[data-theme="light"] body {
+      background: #fdfdfd;
+    }
+
+    html[data-theme="light"] .nav,
+    html[data-theme="light"] .hero,
+    html[data-theme="light"] .logos-sec,
+    html[data-theme="light"] .section,
+    html[data-theme="light"] .cta-sec,
+    html[data-theme="light"] .footer-outer,
+    html[data-theme="light"] .page-divider {
+      filter: invert(1) hue-rotate(180deg);
+    }
+
+    html[data-theme="light"] img:not(.logo-it img),
+    html[data-theme="light"] video {
+      filter: invert(1) hue-rotate(180deg);
+    }
+
+    /* Keep syntax highlighting colors roughly same */
+    html[data-theme="light"] .term-cmd,
+    html[data-theme="light"] .term-ok,
+    html[data-theme="light"] .code-body .cmd {
+      filter: invert(1) hue-rotate(180deg) brightness(0.8);
+    }
+
+    .nav-theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-right: 8px;
+    }
+
+    .nav-theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-theme-toggle svg {
+      width: 15px;
+      height: 15px;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-theme-toggle:active svg {
+      transform: scale(0.9);
+    }
   </style>
 </head>
 
 <body>
-
   <!-- ═══════════ NAVBAR ═══════════ -->
   <nav class="nav">
     <a href="#" class="nav-logo">GradientX</a>
@@ -2122,6 +2202,22 @@
     </div>
     <div class="nav-right">
       <button class="nav-login">Open Source · C++11+ · MIT/GPL v2</button>
+
+      <button class="nav-theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+      </button>
+
       <a href="https://github.com/ibtasaams" target="_blank" class="nav-gh">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
           <path
@@ -2161,8 +2257,9 @@
       </h1>
 
       <p class="hero-p">
-        A from-scratch ML library with full GPU acceleration via Vulkan or CUDA, custom multithreaded CPU operations,
-        backpropagation-ready layers, and a production-grade transformer architecture.
+        A from-scratch ML library with full GPU acceleration via Vulkan or
+        CUDA, custom multithreaded CPU operations, backpropagation-ready
+        layers, and a production-grade transformer architecture.
       </p>
 
       <div class="hero-tags">
@@ -2193,36 +2290,67 @@
           <button class="code-copy" onclick="copyCmd(this)">Copy</button>
         </div>
         <div class="code-body">
-          <span class="prompt">$ </span><span class="cmd">cmake</span> <span
-            class="flag">-DCMAKE_BUILD_TYPE=release</span> .. <span class="flag">&amp;&amp;</span> <span
-            class="cmd">make</span> <span class="flag">&amp;&amp;</span> <span class="cmd">./wef</span>
+          <span class="prompt">$ </span><span class="cmd">cmake</span>
+          <span class="flag">-DCMAKE_BUILD_TYPE=release</span> ..
+          <span class="flag">&amp;&amp;</span> <span class="cmd">make</span>
+          <span class="flag">&amp;&amp;</span> <span class="cmd">./wef</span>
         </div>
       </div>
     </div>
 
     <!-- Stats -->
     <div class="hero-stats">
-      <div class="stat-pill"><span class="stat-num">~119K</span><span class="stat-lbl">Training Pairs</span></div>
-      <div class="stat-pill"><span class="stat-num">3</span><span class="stat-lbl">GPU Backends</span></div>
-      <div class="stat-pill"><span class="stat-num">8+</span><span class="stat-lbl">Layer Types</span></div>
-      <div class="stat-pill"><span class="stat-num">2</span><span class="stat-lbl">Model Architectures</span></div>
+      <div class="stat-pill">
+        <span class="stat-num">~119K</span><span class="stat-lbl">Training Pairs</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-num">3</span><span class="stat-lbl">GPU Backends</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-num">8+</span><span class="stat-lbl">Layer Types</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-num">2</span><span class="stat-lbl">Model Architectures</span>
+      </div>
     </div>
   </section>
 
   <!-- ═══════════ LOGOS ═══════════ -->
-  <section class="logos-sec">
-    <p class="logos-label">TRUSTED BY TEAMS FROM AROUND THE WORLD</p>
-    <div class="logos-row">
-      <div class="logo-it"><img src="https://cdn.magicui.design/companies/Google.svg" alt="Google"></div>
-      <div class="logo-it"><img src="https://cdn.magicui.design/companies/Microsoft.svg" alt="Microsoft"></div>
-      <div class="logo-it"><img src="https://cdn.magicui.design/companies/GitHub.svg" alt="GitHub"></div>
-      <div class="logo-it"><img src="https://cdn.magicui.design/companies/Uber.svg" alt="Uber"></div>
-      <div class="logo-it"><img src="https://cdn.magicui.design/companies/Notion.svg" alt="Notion"></div>
-    </div>
-    <div class="arc-wrap">
-      <div class="arc-el"></div>
-    </div>
-  </section>
+  <!-- <section class="logos-sec">
+      <p class="logos-label">TRUSTED BY TEAMS FROM AROUND THE WORLD</p>
+      <div class="logos-row">
+        <div class="logo-it">
+          <img
+            src="https://cdn.magicui.design/companies/Google.svg"
+            alt="Google"
+          />
+        </div>
+        <div class="logo-it">
+          <img
+            src="https://cdn.magicui.design/companies/Microsoft.svg"
+            alt="Microsoft"
+          />
+        </div>
+        <div class="logo-it">
+          <img
+            src="https://cdn.magicui.design/companies/GitHub.svg"
+            alt="GitHub"
+          />
+        </div>
+        <div class="logo-it">
+          <img src="https://cdn.magicui.design/companies/Uber.svg" alt="Uber" />
+        </div>
+        <div class="logo-it">
+          <img
+            src="https://cdn.magicui.design/companies/Notion.svg"
+            alt="Notion"
+          />
+        </div>
+      </div>
+      <div class="arc-wrap">
+        <div class="arc-el"></div>
+      </div>
+    </section> -->
 
   <div class="page-divider"></div>
 
@@ -2230,17 +2358,25 @@
   <section class="section" id="features">
     <div class="feat-header rv">
       <p class="sec-eyebrow">// Core Components</p>
-      <h2 class="sec-h2">Everything you need,<br />built from the ground up</h2>
-      <p class="sec-p">No PyTorch. No TensorFlow. Every operation — from tensor math to GPU shader dispatch — is written
-        in C++ with full control over performance.</p>
+      <h2 class="sec-h2">
+        Everything you need,<br />built from the ground up
+      </h2>
+      <p class="sec-p">
+        No PyTorch. No TensorFlow. Every operation — from tensor math to GPU
+        shader dispatch — is written in C++ with full control over
+        performance.
+      </p>
     </div>
 
     <div class="feat-grid">
       <div class="fcard rv rv1">
         <div class="fc-icon">🧮</div>
         <div class="fc-name">Tensor Class</div>
-        <div class="fc-desc">A custom N-dimensional tensor with a rich display for readable debugging. Supports both CPU
-          and GPU memory layouts with seamless transfer between backends.</div>
+        <div class="fc-desc">
+          A custom N-dimensional tensor with a rich display for readable
+          debugging. Supports both CPU and GPU memory layouts with seamless
+          transfer between backends.
+        </div>
         <div class="fc-tags">
           <span class="ftag green">matmul</span>
           <span class="ftag">softmax</span>
@@ -2253,8 +2389,11 @@
       <div class="fcard rv rv2">
         <div class="fc-icon">⚡</div>
         <div class="fc-name">GPU Acceleration</div>
-        <div class="fc-desc">Dual GPU backend support. Use Vulkan for platform-agnostic compute shaders (works on AMD,
-          Intel, NVIDIA, Apple) or CUDA for maximum NVIDIA performance.</div>
+        <div class="fc-desc">
+          Dual GPU backend support. Use Vulkan for platform-agnostic compute
+          shaders (works on AMD, Intel, NVIDIA, Apple) or CUDA for maximum
+          NVIDIA performance.
+        </div>
         <div class="fc-tags">
           <span class="ftag purple">Vulkan Compute</span>
           <span class="ftag green">CUDA Kernels</span>
@@ -2265,9 +2404,14 @@
       <div class="fcard rv rv3">
         <div class="fc-icon">🧱</div>
         <div class="fc-name">Neural Network Layers</div>
-        <div class="fc-desc">All standard layers with both CPU and GPU variants. Each layer implements <span
-            style="color:#86efac;font-family:monospace">forward_pass()</span> and <span
-            style="color:#86efac;font-family:monospace">backward_pass()</span> for full backpropagation support.</div>
+        <div class="fc-desc">
+          All standard layers with both CPU and GPU variants. Each layer
+          implements
+          <span style="color: #86efac; font-family: monospace">forward_pass()</span>
+          and
+          <span style="color: #86efac; font-family: monospace">backward_pass()</span>
+          for full backpropagation support.
+        </div>
         <div class="fc-tags">
           <span class="ftag">Linear</span>
           <span class="ftag">Conv2D</span>
@@ -2281,9 +2425,12 @@
       <div class="fcard rv rv4">
         <div class="fc-icon">📦</div>
         <div class="fc-name">Sequential Model</div>
-        <div class="fc-desc">A Keras-inspired Model container for simple architectures. Add layers, call <span
-            style="color:#86efac;font-family:monospace">fit()</span>, and get predictions. Used for the MNIST image
-          classifier demo.</div>
+        <div class="fc-desc">
+          A Keras-inspired Model container for simple architectures. Add
+          layers, call
+          <span style="color: #86efac; font-family: monospace">fit()</span>,
+          and get predictions. Used for the MNIST image classifier demo.
+        </div>
         <div class="fc-tags">
           <span class="ftag green">fit()</span>
           <span class="ftag green">predict()</span>
@@ -2294,8 +2441,10 @@
       <div class="fcard rv rv1">
         <div class="fc-icon">🔧</div>
         <div class="fc-name">Functional Model</div>
-        <div class="fc-desc">A massively customizable architecture container for complex models. Define arbitrary
-          forward/backward graphs, shared weights, and custom training loops. Powers the English→Spanish transformer.
+        <div class="fc-desc">
+          A massively customizable architecture container for complex models.
+          Define arbitrary forward/backward graphs, shared weights, and custom
+          training loops. Powers the English→Spanish transformer.
         </div>
         <div class="fc-tags">
           <span class="ftag purple">Custom Graphs</span>
@@ -2307,8 +2456,11 @@
       <div class="fcard rv rv2">
         <div class="fc-icon">🖥️</div>
         <div class="fc-name">CPU Parallelism</div>
-        <div class="fc-desc">For systems without a discrete GPU, the library provides two CPU parallelization
-          strategies: a custom hand-tuned multithreading implementation and OpenMP integration.</div>
+        <div class="fc-desc">
+          For systems without a discrete GPU, the library provides two CPU
+          parallelization strategies: a custom hand-tuned multithreading
+          implementation and OpenMP integration.
+        </div>
         <div class="fc-tags">
           <span class="ftag">pthread</span>
           <span class="ftag amber">OpenMP</span>
@@ -2325,8 +2477,11 @@
     <div class="rv">
       <p class="sec-eyebrow">// Architecture</p>
       <h2 class="sec-h2">How it all fits together</h2>
-      <p class="sec-p">The library is structured in clean, composable layers. Your model sits at the top and dispatches
-        operations down to whichever compute backend is enabled.</p>
+      <p class="sec-p">
+        The library is structured in clean, composable layers. Your model sits
+        at the top and dispatches operations down to whichever compute backend
+        is enabled.
+      </p>
     </div>
 
     <div class="arch-grid">
@@ -2334,27 +2489,39 @@
         <h3>// Layer Stack</h3>
         <div class="arch-layer top">
           <div>Your Code</div>
-          <div class="arch-layer-sub">transformer.cpp · functional_model_template.cpp · train.cpp</div>
+          <div class="arch-layer-sub">
+            transformer.cpp · functional_model_template.cpp · train.cpp
+          </div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer model">
           <div>Models</div>
-          <div class="arch-layer-sub">Sequential Model · Functional Model</div>
+          <div class="arch-layer-sub">
+            Sequential Model · Functional Model
+          </div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer layer">
           <div>Layers</div>
-          <div class="arch-layer-sub">Linear / Linear_GPU · Conv2D_GPU · MaxPool2D · MHA · Embedding · ReLU</div>
+          <div class="arch-layer-sub">
+            Linear / Linear_GPU · Conv2D_GPU · MaxPool2D · MHA · Embedding ·
+            ReLU
+          </div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer tensor">
           <div>Tensor Ops</div>
-          <div class="arch-layer-sub">matrix_ops.cpp · matrix_ops_GPU.cpp · tensor.cpp</div>
+          <div class="arch-layer-sub">
+            matrix_ops.cpp · matrix_ops_GPU.cpp · tensor.cpp
+          </div>
         </div>
         <div class="arch-arrow">↓</div>
         <div class="arch-layer backend">
           <div>Backends</div>
-          <div class="arch-layer-sub">Vulkan + GLSL Shaders · CUDA Kernels · pthread (CPU) · OpenMP (CPU)</div>
+          <div class="arch-layer-sub">
+            Vulkan + GLSL Shaders · CUDA Kernels · pthread (CPU) · OpenMP
+            (CPU)
+          </div>
         </div>
       </div>
 
@@ -2365,9 +2532,13 @@
             <div class="bc-title">Vulkan Backend</div>
             <span class="bc-badge v">Platform-Agnostic</span>
           </div>
-          <div class="bc-desc">Platform-agnostic GPU compute using GLSL shaders dispatched via the Vulkan API. Works on
-            any GPU — AMD, Intel, NVIDIA, and Apple Silicon. Best for cross-platform deployment. Enabled in the default
-            build via <span style="font-family:monospace;color:#c4b5fd">use_GPU.h</span>.</div>
+          <div class="bc-desc">
+            Platform-agnostic GPU compute using GLSL shaders dispatched via
+            the Vulkan API. Works on any GPU — AMD, Intel, NVIDIA, and Apple
+            Silicon. Best for cross-platform deployment. Enabled in the
+            default build via
+            <span style="font-family: monospace; color: #c4b5fd">use_GPU.h</span>.
+          </div>
         </div>
 
         <div class="backend-card">
@@ -2376,22 +2547,30 @@
             <div class="bc-title">CUDA Backend</div>
             <span class="bc-badge c">NVIDIA Only</span>
           </div>
-          <div class="bc-desc">High-performance compute kernels for NVIDIA GPUs. Targets Maxwell (52), Pascal (60/61),
-            Volta (70), Turing (75), Ampere (80/86), and Hopper (90) architectures. Enable by uncommenting CUDA sources
-            in <span style="font-family:monospace;color:#86efac">CMakeLists.txt</span>.</div>
+          <div class="bc-desc">
+            High-performance compute kernels for NVIDIA GPUs. Targets Maxwell
+            (52), Pascal (60/61), Volta (70), Turing (75), Ampere (80/86), and
+            Hopper (90) architectures. Enable by uncommenting CUDA sources in
+            <span style="font-family: monospace; color: #86efac">CMakeLists.txt</span>.
+          </div>
         </div>
 
         <div class="backend-card">
           <div class="bc-head">
-            <div class="bc-dot" style="background:#fbbf24"></div>
+            <div class="bc-dot" style="background: #fbbf24"></div>
             <div class="bc-title">CPU Backends</div>
-            <span class="bc-badge"
-              style="background:rgba(251,191,36,0.1);color:#fde68a;border:1px solid rgba(251,191,36,0.2)">No GPU
-              Required</span>
+            <span class="bc-badge" style="
+                  background: rgba(251, 191, 36, 0.1);
+                  color: #fde68a;
+                  border: 1px solid rgba(251, 191, 36, 0.2);
+                ">No GPU Required</span>
           </div>
-          <div class="bc-desc">Two CPU parallelization options: a custom pthread-based multithreading implementation
-            with hand-tuned workload distribution, and OpenMP integration for pragma-based parallelism. Both are
-            SIMD-friendly.</div>
+          <div class="bc-desc">
+            Two CPU parallelization options: a custom pthread-based
+            multithreading implementation with hand-tuned workload
+            distribution, and OpenMP integration for pragma-based parallelism.
+            Both are SIMD-friendly.
+          </div>
         </div>
       </div>
     </div>
@@ -2404,7 +2583,10 @@
     <div class="rv">
       <p class="sec-eyebrow">// API Reference</p>
       <h2 class="sec-h2">Documentation</h2>
-      <p class="sec-p">Key classes, methods, and their parameters. Everything you need to wire up your own models.</p>
+      <p class="sec-p">
+        Key classes, methods, and their parameters. Everything you need to
+        wire up your own models.
+      </p>
     </div>
 
     <div class="docs-layout">
@@ -2412,25 +2594,36 @@
       <div class="docs-sidebar">
         <div class="ds-title">On This Page</div>
         <div class="ds-links">
-          <div class="ds-link on" onclick="scrollTo('tensor-doc')">Tensor</div>
-          <div class="ds-link" onclick="scrollTo('model-doc')">Sequential Model</div>
+          <div class="ds-link on" onclick="scrollTo('tensor-doc')">
+            Tensor
+          </div>
+          <div class="ds-link" onclick="scrollTo('model-doc')">
+            Sequential Model
+          </div>
           <div class="ds-link" onclick="scrollTo('layers-doc')">Layers</div>
-          <div class="ds-link" onclick="scrollTo('mha-doc')">Multi-Head Attention</div>
-          <div class="ds-link" onclick="scrollTo('func-doc')">Functional Model</div>
-          <div class="ds-link" onclick="scrollTo('gpu-doc')">GPU Pipeline</div>
+          <div class="ds-link" onclick="scrollTo('mha-doc')">
+            Multi-Head Attention
+          </div>
+          <div class="ds-link" onclick="scrollTo('func-doc')">
+            Functional Model
+          </div>
+          <div class="ds-link" onclick="scrollTo('gpu-doc')">
+            GPU Pipeline
+          </div>
         </div>
       </div>
 
       <!-- Content -->
       <div class="docs-content">
-
         <!-- Tensor -->
         <div class="doc-block rv" id="tensor-doc">
           <div class="doc-block-title">Tensor</div>
           <div class="doc-block-file">tensor.h</div>
-          <div class="doc-block-desc">Core N-dimensional array class. Supports CPU and GPU memory with built-in display
-            for debugging tensor contents and shapes.</div>
-          <div style="overflow-x:auto">
+          <div class="doc-block-desc">
+            Core N-dimensional array class. Supports CPU and GPU memory with
+            built-in display for debugging tensor contents and shapes.
+          </div>
+          <div style="overflow-x: auto">
             <table class="doc-table">
               <thead>
                 <tr>
@@ -2443,7 +2636,10 @@
                 <tr>
                   <td><span class="mono">matmul(a, b)</span></td>
                   <td><span class="mono">Tensor</span></td>
-                  <td>Matrix multiply two tensors. Dispatches to GPU kernel when GPU mode is active.</td>
+                  <td>
+                    Matrix multiply two tensors. Dispatches to GPU kernel when
+                    GPU mode is active.
+                  </td>
                 </tr>
                 <tr>
                   <td><span class="mono">softmax(x)</span></td>
@@ -2456,9 +2652,14 @@
                   <td>Index of maximum value along specified axis.</td>
                 </tr>
                 <tr>
-                  <td><span class="mono">cross_entropy(pred, target)</span></td>
+                  <td>
+                    <span class="mono">cross_entropy(pred, target)</span>
+                  </td>
                   <td><span class="mono">float</span></td>
-                  <td>Cross-entropy loss between prediction logits and one-hot targets.</td>
+                  <td>
+                    Cross-entropy loss between prediction logits and one-hot
+                    targets.
+                  </td>
                 </tr>
                 <tr>
                   <td><span class="mono">transpose(x)</span></td>
@@ -2479,33 +2680,37 @@
         <div class="doc-block rv" id="model-doc">
           <div class="doc-block-title">Model</div>
           <div class="doc-block-file">model.h</div>
-          <div class="doc-block-desc">Sequential model container. Layers are added in order and executed sequentially.
-            Handles the full training loop including forward pass, loss computation, backpropagation, and weight
-            updates.</div>
+          <div class="doc-block-desc">
+            Sequential model container. Layers are added in order and executed
+            sequentially. Handles the full training loop including forward
+            pass, loss computation, backpropagation, and weight updates.
+          </div>
           <div class="code-snippet">
             <div class="cs-bar">
               <span class="cs-fname">sequential_example.cpp</span>
             </div>
-            <div class="cs-body"><span class="tok-cmt">// Construct the model — pass true to enable GPU</span>
+            <div class="cs-body">
+              <span class="tok-cmt">// Construct the model — pass true to enable GPU</span>
               <span class="tok-type">Model</span> model(<span class="tok-kw">true</span>);
 
               <span class="tok-cmt">// Stack layers</span>
-              model.<span class="tok-fn">add</span>(<span class="tok-kw">new</span> <span
-                class="tok-type">Linear_GPU</span>(<span class="tok-num">128</span>));
-              model.<span class="tok-fn">add</span>(<span class="tok-kw">new</span> <span
-                class="tok-type">ReLU</span>());
-              model.<span class="tok-fn">add</span>(<span class="tok-kw">new</span> <span
-                class="tok-type">Linear_GPU</span>(<span class="tok-num">10</span>));
+              model.<span class="tok-fn">add</span>(<span class="tok-kw">new</span>
+              <span class="tok-type">Linear_GPU</span>(<span class="tok-num">128</span>)); model.<span
+                class="tok-fn">add</span>(<span class="tok-kw">new</span>
+              <span class="tok-type">ReLU</span>()); model.<span class="tok-fn">add</span>(<span
+                class="tok-kw">new</span>
+              <span class="tok-type">Linear_GPU</span>(<span class="tok-num">10</span>));
 
               <span class="tok-cmt">// Train</span>
-              model.<span class="tok-fn">fit</span>(labels, images, <span class="tok-cmt">/*epochs=*/</span><span
-                class="tok-num">100</span>, <span class="tok-cmt">/*lr=*/</span><span class="tok-num">0.01f</span>);
+              model.<span class="tok-fn">fit</span>(labels, images,
+              <span class="tok-cmt">/*epochs=*/</span><span class="tok-num">100</span>,
+              <span class="tok-cmt">/*lr=*/</span><span class="tok-num">0.01f</span>);
 
               <span class="tok-cmt">// Inference</span>
               <span class="tok-type">Tensor</span> output = model.<span class="tok-fn">predict</span>(test_input);
             </div>
           </div>
-          <div style="overflow-x:auto">
+          <div style="overflow-x: auto">
             <table class="doc-table">
               <thead>
                 <tr>
@@ -2523,18 +2728,29 @@
                 <tr>
                   <td><span class="mono">add(layer)</span></td>
                   <td><span class="mono">Layer*</span></td>
-                  <td>Append a layer to the stack. Accepts any layer that inherits from the base Layer class.</td>
+                  <td>
+                    Append a layer to the stack. Accepts any layer that
+                    inherits from the base Layer class.
+                  </td>
                 </tr>
                 <tr>
-                  <td><span class="mono">fit(labels, data, epochs, lr)</span></td>
+                  <td>
+                    <span class="mono">fit(labels, data, epochs, lr)</span>
+                  </td>
                   <td><span class="mono">void</span></td>
-                  <td>Run the full training loop. Computes forward pass, cross-entropy loss, backward pass, and gradient
-                    updates for each epoch.</td>
+                  <td>
+                    Run the full training loop. Computes forward pass,
+                    cross-entropy loss, backward pass, and gradient updates
+                    for each epoch.
+                  </td>
                 </tr>
                 <tr>
                   <td><span class="mono">predict(input)</span></td>
                   <td><span class="mono">Tensor</span></td>
-                  <td>Forward pass only, no gradient computation. Returns raw logits.</td>
+                  <td>
+                    Forward pass only, no gradient computation. Returns raw
+                    logits.
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -2545,10 +2761,13 @@
         <div class="doc-block rv" id="layers-doc">
           <div class="doc-block-title">Layers</div>
           <div class="doc-block-file">layers.h</div>
-          <div class="doc-block-desc">All layers inherit from a common base and implement <span
-              class="mono">forward_pass()</span> and <span class="mono">backward_pass()</span>. GPU variants are
-            suffixed with <span class="mono">_GPU</span>.</div>
-          <div style="overflow-x:auto">
+          <div class="doc-block-desc">
+            All layers inherit from a common base and implement
+            <span class="mono">forward_pass()</span> and
+            <span class="mono">backward_pass()</span>. GPU variants are
+            suffixed with <span class="mono">_GPU</span>.
+          </div>
+          <div style="overflow-x: auto">
             <table class="doc-table">
               <thead>
                 <tr>
@@ -2561,32 +2780,49 @@
                 <tr>
                   <td><span class="mono">Linear(out)</span></td>
                   <td><span class="mono">Linear_GPU</span></td>
-                  <td>Fully connected layer: y = xW + b. Weight and bias are learned via backprop.</td>
+                  <td>
+                    Fully connected layer: y = xW + b. Weight and bias are
+                    learned via backprop.
+                  </td>
                 </tr>
                 <tr>
                   <td><span class="mono">Conv2D(filters, kernel)</span></td>
                   <td><span class="mono">Conv2D_GPU</span></td>
-                  <td>2D convolution with configurable filters and kernel size. Backward pass computes dW and dX.</td>
+                  <td>
+                    2D convolution with configurable filters and kernel size.
+                    Backward pass computes dW and dX.
+                  </td>
                 </tr>
                 <tr>
                   <td><span class="mono">MaxPool2D(size)</span></td>
                   <td>—</td>
-                  <td>Spatial max pooling. Reduces spatial dimensions by the given pool size.</td>
+                  <td>
+                    Spatial max pooling. Reduces spatial dimensions by the
+                    given pool size.
+                  </td>
                 </tr>
                 <tr>
                   <td><span class="mono">ReLU()</span></td>
                   <td>—</td>
-                  <td>Element-wise rectified linear unit. Fast, simple, and works on CPU and GPU tensors.</td>
+                  <td>
+                    Element-wise rectified linear unit. Fast, simple, and
+                    works on CPU and GPU tensors.
+                  </td>
                 </tr>
                 <tr>
                   <td><span class="mono">Embedding(vocab, dim)</span></td>
                   <td>—</td>
-                  <td>Learnable token embedding lookup table. Used in the transformer encoder/decoder.</td>
+                  <td>
+                    Learnable token embedding lookup table. Used in the
+                    transformer encoder/decoder.
+                  </td>
                 </tr>
                 <tr>
                   <td><span class="mono">MHA(heads, dim)</span></td>
                   <td>—</td>
-                  <td>Multi-Head Attention. Computes scaled dot-product attention across multiple heads in parallel.
+                  <td>
+                    Multi-Head Attention. Computes scaled dot-product
+                    attention across multiple heads in parallel.
                   </td>
                 </tr>
               </tbody>
@@ -2598,17 +2834,24 @@
         <div class="doc-block rv" id="mha-doc">
           <div class="doc-block-title">MultiHeadAttention</div>
           <div class="doc-block-file">layers.h</div>
-          <div class="doc-block-desc">Scaled dot-product attention mechanism split across multiple heads. Projects
-            queries, keys, and values, computes attention scores, and concatenates head outputs. Core building block of
-            the transformer.</div>
+          <div class="doc-block-desc">
+            Scaled dot-product attention mechanism split across multiple
+            heads. Projects queries, keys, and values, computes attention
+            scores, and concatenates head outputs. Core building block of the
+            transformer.
+          </div>
           <div class="code-snippet">
-            <div class="cs-bar"><span class="cs-fname">attention_math.txt</span></div>
-            <div class="cs-body"><span class="tok-cmt">// Attention formula (per head)</span>
+            <div class="cs-bar">
+              <span class="cs-fname">attention_math.txt</span>
+            </div>
+            <div class="cs-body">
+              <span class="tok-cmt">// Attention formula (per head)</span>
               Attention(Q, K, V) = softmax( Q·Kᵀ / √dₖ ) · V
 
               <span class="tok-cmt">// Multi-head: run h heads in parallel then concat</span>
               MultiHead(Q,K,V) = Concat(head₁,...,headₕ) · Wₒ
-              <span class="tok-kw">where</span> headᵢ = Attention(Q·Wᵢᵠ, K·Wᵢᴷ, V·Wᵢᵛ)
+              <span class="tok-kw">where</span> headᵢ = Attention(Q·Wᵢᵠ,
+              K·Wᵢᴷ, V·Wᵢᵛ)
             </div>
           </div>
         </div>
@@ -2617,10 +2860,12 @@
         <div class="doc-block rv" id="func-doc">
           <div class="doc-block-title">Functional Model</div>
           <div class="doc-block-file">functional_model_template.cpp</div>
-          <div class="doc-block-desc">For architectures that cannot be expressed as a simple stack of layers — such as
-            encoder-decoder transformers, residual networks, or models with shared weights — use the functional model
-            pattern.</div>
-          <div style="overflow-x:auto">
+          <div class="doc-block-desc">
+            For architectures that cannot be expressed as a simple stack of
+            layers — such as encoder-decoder transformers, residual networks,
+            or models with shared weights — use the functional model pattern.
+          </div>
+          <div style="overflow-x: auto">
             <table class="doc-table">
               <thead>
                 <tr>
@@ -2631,20 +2876,31 @@
               <tbody>
                 <tr>
                   <td>Custom forward graph</td>
-                  <td>Define the exact execution order of layers, residual connections, and branching paths.</td>
+                  <td>
+                    Define the exact execution order of layers, residual
+                    connections, and branching paths.
+                  </td>
                 </tr>
                 <tr>
                   <td>Shared weights</td>
-                  <td>The same layer instance can be referenced at multiple points in the graph.</td>
+                  <td>
+                    The same layer instance can be referenced at multiple
+                    points in the graph.
+                  </td>
                 </tr>
                 <tr>
                   <td>Custom training loop</td>
-                  <td>Full control over loss computation, gradient accumulation, and optimizer step timing.</td>
+                  <td>
+                    Full control over loss computation, gradient accumulation,
+                    and optimizer step timing.
+                  </td>
                 </tr>
                 <tr>
                   <td>Example included</td>
-                  <td><span class="mono">transformer.cpp</span> demonstrates a complete encoder-decoder architecture
-                    using this pattern.</td>
+                  <td>
+                    <span class="mono">transformer.cpp</span> demonstrates a
+                    complete encoder-decoder architecture using this pattern.
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -2655,10 +2911,13 @@
         <div class="doc-block rv" id="gpu-doc">
           <div class="doc-block-title">GPU Pipeline</div>
           <div class="doc-block-file">use_GPU.h</div>
-          <div class="doc-block-desc">Wraps the Vulkan compute pipeline — instance creation, device selection, command
-            buffer recording, and shader dispatch — behind a clean C++ interface. Shaders are written in GLSL and
-            compiled to SPIR-V at build time.</div>
-          <div style="overflow-x:auto">
+          <div class="doc-block-desc">
+            Wraps the Vulkan compute pipeline — instance creation, device
+            selection, command buffer recording, and shader dispatch — behind
+            a clean C++ interface. Shaders are written in GLSL and compiled to
+            SPIR-V at build time.
+          </div>
+          <div style="overflow-x: auto">
             <table class="doc-table">
               <thead>
                 <tr>
@@ -2671,29 +2930,41 @@
                 <tr>
                   <td>VulkanPipeline</td>
                   <td><span class="mono">use_GPU.h / .cpp</span></td>
-                  <td>Manages Vulkan instance, physical device, logical device, and compute queue.</td>
+                  <td>
+                    Manages Vulkan instance, physical device, logical device,
+                    and compute queue.
+                  </td>
                 </tr>
                 <tr>
                   <td>GPU Layers</td>
                   <td><span class="mono">layers_GPU.cpp</span></td>
-                  <td>Layer implementations that dispatch work to the Vulkan pipeline instead of the CPU.</td>
+                  <td>
+                    Layer implementations that dispatch work to the Vulkan
+                    pipeline instead of the CPU.
+                  </td>
                 </tr>
                 <tr>
                   <td>GPU Matrix Ops</td>
                   <td><span class="mono">matrix_ops_GPU.cpp</span></td>
-                  <td>Core math operations (matmul, etc.) implemented as Vulkan compute dispatches.</td>
+                  <td>
+                    Core math operations (matmul, etc.) implemented as Vulkan
+                    compute dispatches.
+                  </td>
                 </tr>
                 <tr>
                   <td>GLSL Kernels</td>
                   <td><span class="mono">kernel.cu / shaders/</span></td>
-                  <td>Compute shaders for matmul, convolution forward/backward, and element-wise ops.</td>
+                  <td>
+                    Compute shaders for matmul, convolution forward/backward,
+                    and element-wise ops.
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-
-      </div><!-- end docs-content -->
+      </div>
+      <!-- end docs-content -->
     </div>
   </section>
 
@@ -2704,8 +2975,10 @@
     <div class="rv">
       <p class="sec-eyebrow">// Examples &amp; Demos</p>
       <h2 class="sec-h2">See it in action</h2>
-      <p class="sec-p">Two complete working demos ship with the library. Use them as references or extend them into your
-        own projects.</p>
+      <p class="sec-p">
+        Two complete working demos ship with the library. Use them as
+        references or extend them into your own projects.
+      </p>
     </div>
 
     <div class="demos-grid">
@@ -2715,14 +2988,22 @@
           <span class="demo-icon">🌐</span>
           <span class="demo-title">English → Spanish Transformer</span>
         </div>
-        <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+        <div style="
+              display: flex;
+              gap: 8px;
+              margin-bottom: 14px;
+              flex-wrap: wrap;
+            ">
           <span class="demo-badge">Seq2Seq encoder-decoder</span>
           <span class="demo-badge">~119K sentence pairs</span>
-          <span class="demo-badge" style="font-family:monospace;font-size:10.5px">transformer.cpp</span>
+          <span class="demo-badge" style="font-family: monospace; font-size: 10.5px">transformer.cpp</span>
         </div>
-        <div class="demo-desc">A full encoder-decoder transformer trained on the Tatoeba English–Spanish dataset.
-          Demonstrates the Functional Model API with multi-head attention, positional encoding, and autoregressive
-          decoding.</div>
+        <div class="demo-desc">
+          A full encoder-decoder transformer trained on the Tatoeba
+          English–Spanish dataset. Demonstrates the Functional Model API with
+          multi-head attention, positional encoding, and autoregressive
+          decoding.
+        </div>
         <div class="trans-list">
           <div class="trans-row">
             <span class="trans-en">Hello, how are you?</span>
@@ -2750,25 +3031,70 @@
             <span class="trans-es">¡Corre!</span>
           </div>
         </div>
-        <div
-          style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;font-family:monospace">
-          Architecture</div>
-        <div class="model-stack" style="gap:4px">
-          <div
-            style="padding:7px 12px;background:rgba(167,139,250,0.08);border:1px solid rgba(167,139,250,0.15);border-radius:6px;font-size:12px;color:#c4b5fd">
-            Token Embedding</div>
-          <div
-            style="padding:7px 12px;background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.12);border-radius:6px;font-size:12px;color:#c4b5fd;opacity:.85">
-            Positional Encoding</div>
-          <div
-            style="padding:7px 12px;background:rgba(96,165,250,0.07);border:1px solid rgba(96,165,250,0.15);border-radius:6px;font-size:12px;color:#93c5fd">
-            N× Encoder Blocks → Multi-Head Attention</div>
-          <div
-            style="padding:7px 12px;background:rgba(96,165,250,0.05);border:1px solid rgba(96,165,250,0.12);border-radius:6px;font-size:12px;color:#93c5fd;opacity:.85">
-            N× Decoder Blocks → Cross-Attention</div>
-          <div
-            style="padding:7px 12px;background:rgba(74,222,128,0.07);border:1px solid rgba(74,222,128,0.15);border-radius:6px;font-size:12px;color:#86efac">
-            Linear + Softmax</div>
+        <div style="
+              font-size: 12px;
+              font-weight: 600;
+              color: rgba(255, 255, 255, 0.3);
+              letter-spacing: 0.07em;
+              text-transform: uppercase;
+              margin-bottom: 10px;
+              font-family: monospace;
+            ">
+          Architecture
+        </div>
+        <div class="model-stack" style="gap: 4px">
+          <div style="
+                padding: 7px 12px;
+                background: rgba(167, 139, 250, 0.08);
+                border: 1px solid rgba(167, 139, 250, 0.15);
+                border-radius: 6px;
+                font-size: 12px;
+                color: #c4b5fd;
+              ">
+            Token Embedding
+          </div>
+          <div style="
+                padding: 7px 12px;
+                background: rgba(167, 139, 250, 0.06);
+                border: 1px solid rgba(167, 139, 250, 0.12);
+                border-radius: 6px;
+                font-size: 12px;
+                color: #c4b5fd;
+                opacity: 0.85;
+              ">
+            Positional Encoding
+          </div>
+          <div style="
+                padding: 7px 12px;
+                background: rgba(96, 165, 250, 0.07);
+                border: 1px solid rgba(96, 165, 250, 0.15);
+                border-radius: 6px;
+                font-size: 12px;
+                color: #93c5fd;
+              ">
+            N× Encoder Blocks → Multi-Head Attention
+          </div>
+          <div style="
+                padding: 7px 12px;
+                background: rgba(96, 165, 250, 0.05);
+                border: 1px solid rgba(96, 165, 250, 0.12);
+                border-radius: 6px;
+                font-size: 12px;
+                color: #93c5fd;
+                opacity: 0.85;
+              ">
+            N× Decoder Blocks → Cross-Attention
+          </div>
+          <div style="
+                padding: 7px 12px;
+                background: rgba(74, 222, 128, 0.07);
+                border: 1px solid rgba(74, 222, 128, 0.15);
+                border-radius: 6px;
+                font-size: 12px;
+                color: #86efac;
+              ">
+            Linear + Softmax
+          </div>
         </div>
       </div>
 
@@ -2778,39 +3104,72 @@
           <span class="demo-icon">🔢</span>
           <span class="demo-title">MNIST Image Classifier</span>
         </div>
-        <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+        <div style="
+              display: flex;
+              gap: 8px;
+              margin-bottom: 14px;
+              flex-wrap: wrap;
+            ">
           <span class="demo-badge">Sequential model</span>
           <span class="demo-badge">60K training images</span>
           <span class="demo-badge">10 classes</span>
-          <span class="demo-badge" style="font-family:monospace;font-size:10.5px">img_class.cpp</span>
+          <span class="demo-badge" style="font-family: monospace; font-size: 10.5px">img_class.cpp</span>
         </div>
-        <div class="demo-desc">Classifies handwritten digits 0–9 using the Sequential Model API with Conv2D, MaxPool2D,
-          and Linear layers. Demonstrates GPU-accelerated training on image data.</div>
-        <div
-          style="margin-bottom:20px;padding:16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px;font-family:monospace;font-size:13px;color:rgba(255,255,255,0.25);text-align:center;line-height:1.3">
+        <div class="demo-desc">
+          Classifies handwritten digits 0–9 using the Sequential Model API
+          with Conv2D, MaxPool2D, and Linear layers. Demonstrates
+          GPU-accelerated training on image data.
+        </div>
+        <div style="
+              margin-bottom: 20px;
+              padding: 16px;
+              background: rgba(255, 255, 255, 0.02);
+              border: 1px solid rgba(255, 255, 255, 0.06);
+              border-radius: 8px;
+              font-family: monospace;
+              font-size: 13px;
+              color: rgba(255, 255, 255, 0.25);
+              text-align: center;
+              line-height: 1.3;
+            ">
           ████<br />█&nbsp;&nbsp;█<br />████<br />█&nbsp;&nbsp;&nbsp;<br />████<br /><span
-            style="font-size:10px;margin-top:6px;display:block">↑ Visualized activation map (sample)</span>
+            style="font-size: 10px; margin-top: 6px; display: block">↑ Visualized activation map (sample)</span>
         </div>
-        <div
-          style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;font-family:monospace">
-          Model Stack</div>
+        <div style="
+              font-size: 12px;
+              font-weight: 600;
+              color: rgba(255, 255, 255, 0.3);
+              letter-spacing: 0.07em;
+              text-transform: uppercase;
+              margin-bottom: 10px;
+              font-family: monospace;
+            ">
+          Model Stack
+        </div>
         <div class="model-stack">
           <div class="stack-item">
             <div class="stack-num">1</div>
-            <div class="stack-info"><strong>Conv2D_GPU</strong><span>Extract local features from 28×28 input</span>
+            <div class="stack-info">
+              <strong>Conv2D_GPU</strong><span>Extract local features from 28×28 input</span>
             </div>
           </div>
           <div class="stack-item">
             <div class="stack-num">2</div>
-            <div class="stack-info"><strong>MaxPool2D</strong><span>Downsample spatial dimensions</span></div>
+            <div class="stack-info">
+              <strong>MaxPool2D</strong><span>Downsample spatial dimensions</span>
+            </div>
           </div>
           <div class="stack-item">
             <div class="stack-num">3</div>
-            <div class="stack-info"><strong>ReLU</strong><span>Non-linear activation</span></div>
+            <div class="stack-info">
+              <strong>ReLU</strong><span>Non-linear activation</span>
+            </div>
           </div>
           <div class="stack-item">
             <div class="stack-num">4</div>
-            <div class="stack-info"><strong>Linear_GPU(10)</strong><span>Output logits for 10 classes</span></div>
+            <div class="stack-info">
+              <strong>Linear_GPU(10)</strong><span>Output logits for 10 classes</span>
+            </div>
           </div>
         </div>
       </div>
@@ -2824,43 +3183,60 @@
     <div class="rv">
       <p class="sec-eyebrow">// Setup &amp; Build</p>
       <h2 class="sec-h2">Get running in minutes</h2>
-      <p class="sec-p">Clone, configure your GPU backend, and build with CMake. No package manager, no Python
-        environment.</p>
+      <p class="sec-p">
+        Clone, configure your GPU backend, and build with CMake. No package
+        manager, no Python environment.
+      </p>
     </div>
 
     <div class="build-grid">
       <!-- Prerequisites -->
       <div class="rv rv1">
-        <h3
-          style="font-size:clamp(14px,1.8vw,16px);font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:-.01em">
-          Prerequisites</h3>
+        <h3 style="
+              font-size: clamp(14px, 1.8vw, 16px);
+              font-weight: 700;
+              color: #fff;
+              margin-bottom: 16px;
+              letter-spacing: -0.01em;
+            ">
+          Prerequisites
+        </h3>
         <div class="prereq-list">
           <div class="prereq-item">
             <span class="pi-icon">⚙️</span>
-            <div class="pi-info"><strong>C++ Compiler</strong><span>g++, clang++, or MSVC supporting C++11 or
-                higher</span></div>
+            <div class="pi-info">
+              <strong>C++ Compiler</strong><span>g++, clang++, or MSVC supporting C++11 or higher</span>
+            </div>
             <span class="pi-badge req">Required</span>
           </div>
           <div class="prereq-item">
             <span class="pi-icon">🔨</span>
-            <div class="pi-info"><strong>CMake 3.14+</strong><span>Build system generator</span></div>
+            <div class="pi-info">
+              <strong>CMake 3.14+</strong><span>Build system generator</span>
+            </div>
             <span class="pi-badge req">Required</span>
           </div>
           <div class="prereq-item">
             <span class="pi-icon">🟣</span>
-            <div class="pi-info"><strong>Vulkan SDK</strong><span>For GPU acceleration on any platform. Set VULKAN_SDK
-                path in CMakeLists.txt</span></div>
+            <div class="pi-info">
+              <strong>Vulkan SDK</strong><span>For GPU acceleration on any platform. Set VULKAN_SDK path in
+                CMakeLists.txt</span>
+            </div>
             <span class="pi-badge opt">Vulkan GPU</span>
           </div>
           <div class="prereq-item">
             <span class="pi-icon">🟢</span>
-            <div class="pi-info"><strong>CUDA Toolkit</strong><span>For NVIDIA GPU acceleration. Uncomment CUDA sources
-                in CMakeLists.txt</span></div>
+            <div class="pi-info">
+              <strong>CUDA Toolkit</strong><span>For NVIDIA GPU acceleration. Uncomment CUDA sources in
+                CMakeLists.txt</span>
+            </div>
             <span class="pi-badge opt">CUDA GPU</span>
           </div>
           <div class="prereq-item">
             <span class="pi-icon">💻</span>
-            <div class="pi-info"><strong>OpenMP</strong><span>For CPU parallelization via OpenMP pragmas</span></div>
+            <div class="pi-info">
+              <strong>OpenMP</strong><span>For CPU parallelization via OpenMP pragmas</span>
+            </div>
             <span class="pi-badge opt">CPU Only</span>
           </div>
         </div>
@@ -2873,28 +3249,39 @@
           <div class="step-list">
             <div class="step-item">
               <div class="step-n">1</div>
-              <div class="step-txt">Clone the
-                repository<br /><code>git clone https://github.com/gideon116/Cpp_ML.git</code></div>
+              <div class="step-txt">
+                Clone the repository<br /><code>git clone https://github.com/gideon116/Cpp_ML.git</code>
+              </div>
             </div>
             <div class="step-item">
               <div class="step-n">2</div>
-              <div class="step-txt">Navigate and create a build
-                directory<br /><code>cd Cpp_ML &amp;&amp; mkdir build &amp;&amp; cd build</code></div>
+              <div class="step-txt">
+                Navigate and create a build
+                directory<br /><code>cd Cpp_ML &amp;&amp; mkdir build &amp;&amp; cd build</code>
+              </div>
             </div>
             <div class="step-item">
               <div class="step-n">3</div>
-              <div class="step-txt">(Optional) Edit CMakeLists.txt to set your Vulkan SDK path or enable CUDA. The SDK
-                path variable is near the top of the file.</div>
+              <div class="step-txt">
+                (Optional) Edit CMakeLists.txt to set your Vulkan SDK path or
+                enable CUDA. The SDK path variable is near the top of the
+                file.
+              </div>
             </div>
             <div class="step-item">
               <div class="step-n">4</div>
-              <div class="step-txt">Configure, build, and
-                run<br /><code>cmake -DCMAKE_BUILD_TYPE=release .. &amp;&amp; make &amp;&amp; ./wef</code></div>
+              <div class="step-txt">
+                Configure, build, and run<br /><code>cmake -DCMAKE_BUILD_TYPE=release .. &amp;&amp; make
+                    &amp;&amp; ./wef</code>
+              </div>
             </div>
             <div class="step-item">
               <div class="step-n">5</div>
-              <div class="step-txt">To run a different example, edit train.cpp and call the desired function (e.g.,
-                <code>transformer()</code> or your own).</div>
+              <div class="step-txt">
+                To run a different example, edit train.cpp and call the
+                desired function (e.g., <code>transformer()</code> or your
+                own).
+              </div>
             </div>
           </div>
         </div>
@@ -2902,27 +3289,27 @@
     </div>
 
     <!-- Terminal output -->
-    <div class="rv" style="margin-top:clamp(16px,2.5vh,24px)">
+    <div class="rv" style="margin-top: clamp(16px, 2.5vh, 24px)">
       <div class="terminal">
         <div class="term-bar">
           <div class="term-dot r"></div>
           <div class="term-dot y"></div>
           <div class="term-dot g"></div>
         </div>
-        <div class="term-body"><span class="term-prompt">$ </span><span class="term-cmd">git clone
+        <div class="term-body">
+          <span class="term-prompt">$ </span><span class="term-cmd">git clone
             https://github.com/gideon116/Cpp_ML.git</span>
           <span class="term-out">Cloning into 'Cpp_ML'...</span>
           <span class="term-prompt">$ </span><span class="term-cmd">cd Cpp_ML &amp;&amp; mkdir build &amp;&amp; cd
             build</span>
           <span class="term-prompt">$ </span><span class="term-cmd">cmake -DCMAKE_BUILD_TYPE=release ..</span>
-          <span class="term-out">-- Configuring done
-            -- Build files have been written to: .../build</span>
+          <span class="term-out">-- Configuring done -- Build files have been written to:
+            .../build</span>
           <span class="term-prompt">$ </span><span class="term-cmd">make</span>
-          <span class="term-out">[ 14%] Building CXX object CMakeFiles/wef.dir/train.cpp.o
-            [ 28%] Building CXX object CMakeFiles/wef.dir/src/transformer.cpp.o
-            [ 42%] Building CXX object CMakeFiles/wef.dir/src/layers_GPU.cpp.o
-            ...
-            [100%] Linking CXX executable wef</span>
+          <span class="term-out">[ 14%] Building CXX object CMakeFiles/wef.dir/train.cpp.o [ 28%]
+            Building CXX object CMakeFiles/wef.dir/src/transformer.cpp.o [
+            42%] Building CXX object CMakeFiles/wef.dir/src/layers_GPU.cpp.o
+            ... [100%] Linking CXX executable wef</span>
           <span class="term-prompt">$ </span><span class="term-cmd">./wef</span>
           <span class="term-ok">Training transformer... epoch 1/50 loss: 4.2391</span>
         </div>
@@ -2937,7 +3324,9 @@
     <div class="rv">
       <p class="sec-eyebrow">// File Structure</p>
       <h2 class="sec-h2">Project layout</h2>
-      <p class="sec-p">A quick map of every important file in the repository.</p>
+      <p class="sec-p">
+        A quick map of every important file in the repository.
+      </p>
     </div>
 
     <div class="file-table-wrap rv">
@@ -2952,12 +3341,18 @@
         <tbody>
           <tr>
             <td><span class="file-path">include/tensor.h</span></td>
-            <td>Core tensor type — data, shape, device flag, and all math op declarations</td>
+            <td>
+              Core tensor type — data, shape, device flag, and all math op
+              declarations
+            </td>
             <td><span class="file-role found">Foundation</span></td>
           </tr>
           <tr>
             <td><span class="file-path">include/layers.h</span></td>
-            <td>All layer class declarations: Linear, Conv2D, MaxPool2D, ReLU, MHA, Embedding, and GPU variants</td>
+            <td>
+              All layer class declarations: Linear, Conv2D, MaxPool2D, ReLU,
+              MHA, Embedding, and GPU variants
+            </td>
             <td><span class="file-role">Building Blocks</span></td>
           </tr>
           <tr>
@@ -2967,12 +3362,18 @@
           </tr>
           <tr>
             <td><span class="file-path">include/use_GPU.h</span></td>
-            <td>Vulkan compute pipeline wrapper — device, queue, command buffers, and shader dispatch</td>
+            <td>
+              Vulkan compute pipeline wrapper — device, queue, command
+              buffers, and shader dispatch
+            </td>
             <td><span class="file-role gpu">GPU</span></td>
           </tr>
           <tr>
             <td><span class="file-path">src/transformer.cpp</span></td>
-            <td>Complete English→Spanish transformer encoder-decoder using the Functional Model pattern</td>
+            <td>
+              Complete English→Spanish transformer encoder-decoder using the
+              Functional Model pattern
+            </td>
             <td><span class="file-role demo">Demo</span></td>
           </tr>
           <tr>
@@ -3001,8 +3402,12 @@
             <td><span class="file-role gpu">GPU</span></td>
           </tr>
           <tr>
-            <td><span class="file-path">src/layers_multithreaded.cpp</span></td>
-            <td>CPU layer implementations using custom pthread-based parallelism</td>
+            <td>
+              <span class="file-path">src/layers_multithreaded.cpp</span>
+            </td>
+            <td>
+              CPU layer implementations using custom pthread-based parallelism
+            </td>
             <td><span class="file-role">Building Blocks</span></td>
           </tr>
           <tr>
@@ -3016,18 +3421,26 @@
             <td><span class="file-role">Entry Point</span></td>
           </tr>
           <tr>
-            <td><span class="file-path">functional_model_template.cpp</span></td>
+            <td>
+              <span class="file-path">functional_model_template.cpp</span>
+            </td>
             <td>Blank template for building your own custom architecture</td>
             <td><span class="file-role">Template</span></td>
           </tr>
           <tr>
             <td><span class="file-path">english_spanish_tab.txt</span></td>
-            <td>~119K English–Spanish sentence pairs (Tatoeba corpus) for transformer training</td>
+            <td>
+              ~119K English–Spanish sentence pairs (Tatoeba corpus) for
+              transformer training
+            </td>
             <td><span class="file-role demo">Data</span></td>
           </tr>
           <tr>
             <td><span class="file-path">CMakeLists.txt</span></td>
-            <td>Build configuration — toggle CUDA/Vulkan backends and set SDK paths here</td>
+            <td>
+              Build configuration — toggle CUDA/Vulkan backends and set SDK
+              paths here
+            </td>
             <td><span class="file-role build">Build</span></td>
           </tr>
         </tbody>
@@ -3048,7 +3461,7 @@
     <div class="team-wrap">
       <div class="team-card rv rv1">
         <div class="tc-img-box">
-          <img src="founder.png" alt="Ibtasaam Abbasi">
+          <img src="founder.png" alt="Ibtasaam Abbasi" />
         </div>
         <div class="tc-info">
           <div class="tc-role">Meet the</div>
@@ -3071,7 +3484,10 @@
           </svg>
         </div>
         <h2 class="cta-h2">Start building today.</h2>
-        <p class="cta-p">Clone the repo, pick your backend, and run your first model in minutes.</p>
+        <p class="cta-p">
+          Clone the repo, pick your backend, and run your first model in
+          minutes.
+        </p>
         <a href="https://github.com/gideon116/Cpp_ML" target="_blank" class="cta-btn">
           View on GitHub
           <svg viewBox="0 0 13 13" fill="none">
@@ -3092,7 +3508,10 @@
             <div class="foot-logo-icon">G</div>
             <span class="foot-brand-name">GradientX</span>
           </div>
-          <p class="foot-tag">A high performance C++ machine learning library with GPU acceleration</p>
+          <p class="foot-tag">
+            A high performance C++ machine learning library with GPU
+            acceleration
+          </p>
         </div>
         <div>
           <div class="foot-col-h">Project</div>
@@ -3128,8 +3547,10 @@
             </svg>
           </a>
         </div>
-        <p class="foot-copy">Licensed under GPL v2 · Made by <a href="https://github.com/gideon116"
-            target="_blank">gideon116</a></p>
+        <p class="foot-copy">
+          Licensed under GPL v2 · Made by
+          <a href="https://github.com/gideon116" target="_blank">gideon116</a>
+        </p>
       </div>
     </div>
   </div>
@@ -3138,12 +3559,25 @@
   <script>
     /* ── Stars ── */
     (function () {
-      var c = document.getElementById('stars');
+      var c = document.getElementById("stars");
       for (var i = 0; i < 45; i++) {
-        var s = document.createElement('div');
-        s.className = 'star';
-        var sz = .7 + Math.random() * 1.5;
-        s.style.cssText = 'left:' + Math.random() * 100 + '%;top:' + (12 + Math.random() * 74) + '%;width:' + sz + 'px;height:' + sz + 'px;--d:' + (5 + Math.random() * 9) + 's;--dl:' + (Math.random() * 8) + 's';
+        var s = document.createElement("div");
+        s.className = "star";
+        var sz = 0.7 + Math.random() * 1.5;
+        s.style.cssText =
+          "left:" +
+          Math.random() * 100 +
+          "%;top:" +
+          (12 + Math.random() * 74) +
+          "%;width:" +
+          sz +
+          "px;height:" +
+          sz +
+          "px;--d:" +
+          (5 + Math.random() * 9) +
+          "s;--dl:" +
+          Math.random() * 8 +
+          "s";
         c.appendChild(s);
       }
     })();
@@ -3158,18 +3592,27 @@
         '<svg viewBox="0 0 28 28" fill="none"><path d="M5 22a1.2 1.2 0 102.4 0A1.2 1.2 0 005 22z" fill="currentColor"/><path d="M5 16a9 9 0 019 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5 10a15 15 0 0115 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
         '<svg viewBox="0 0 28 28" fill="none"><path d="M6 8l4-3h8l4 3v12l-4 3H10l-4-3V8z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 14h8M14 10v8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
       ];
-      var colors = ['', 'c-blue', 'c-green', 'c-amber', 'c-pink', 'c-purple', 'c-cyan', ''];
-      var grid = document.getElementById('igrid');
+      var colors = [
+        "",
+        "c-blue",
+        "c-green",
+        "c-amber",
+        "c-pink",
+        "c-purple",
+        "c-cyan",
+        "",
+      ];
+      var grid = document.getElementById("igrid");
       for (var r = 0; r < 3; r++) {
-        var row = document.createElement('div');
-        row.className = 'irow' + (r % 2 === 1 ? ' rev' : '');
-        row.style.setProperty('--sp', (26 + r * 8) + 's');
+        var row = document.createElement("div");
+        row.className = "irow" + (r % 2 === 1 ? " rev" : "");
+        row.style.setProperty("--sp", 26 + r * 8 + "s");
         for (var rep = 0; rep < 2; rep++) {
           for (var i = 0; i < 22; i++) {
             var idx = (r * 5 + i) % icons.length;
             var col = colors[(i + r * 3) % colors.length];
-            var t = document.createElement('div');
-            t.className = 'itile ' + col;
+            var t = document.createElement("div");
+            t.className = "itile " + col;
             t.innerHTML = icons[idx];
             row.appendChild(t);
           }
@@ -3180,33 +3623,83 @@
 
     /* ── Copy button ── */
     function copyCmd(btn) {
-      navigator.clipboard.writeText('cmake -DCMAKE_BUILD_TYPE=release .. && make && ./wef');
-      btn.textContent = 'Copied!';
-      setTimeout(function () { btn.textContent = 'Copy' }, 2000);
+      navigator.clipboard.writeText(
+        "cmake -DCMAKE_BUILD_TYPE=release .. && make && ./wef",
+      );
+      btn.textContent = "Copied!";
+      setTimeout(function () {
+        btn.textContent = "Copy";
+      }, 2000);
     }
 
     /* ── Mobile nav ── */
     function toggleNav() {
-      var d = document.getElementById('navDrawer');
-      d.classList.toggle('open');
+      var d = document.getElementById("navDrawer");
+      d.classList.toggle("open");
     }
     function closeNav() {
-      document.getElementById('navDrawer').classList.remove('open');
+      document.getElementById("navDrawer").classList.remove("open");
     }
 
     /* ── Scroll reveal ── */
-    var rvEls = document.querySelectorAll('.rv');
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); }
-      });
-    }, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
-    rvEls.forEach(function (el) { observer.observe(el); });
+    var rvEls = document.querySelectorAll(".rv");
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.07, rootMargin: "0px 0px -24px 0px" },
+    );
+    rvEls.forEach(function (el) {
+      observer.observe(el);
+    });
 
     /* ── Smooth scroll for sidebar ── */
     function scrollTo(id) {
       var el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  </script>
+
+  <script>
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const htmlEl = document.documentElement;
+
+    // Check saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      htmlEl.setAttribute("data-theme", "light");
+      setMoonIcon();
+    } else {
+      setSunIcon();
+    }
+
+    themeToggleBtn.addEventListener("click", () => {
+      const currentTheme = htmlEl.getAttribute("data-theme");
+      if (currentTheme === "light") {
+        htmlEl.removeAttribute("data-theme");
+        localStorage.setItem("theme", "dark");
+        setSunIcon();
+      } else {
+        htmlEl.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+        setMoonIcon();
+      }
+    });
+
+    function setSunIcon() {
+      themeIcon.innerHTML =
+        '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>';
+    }
+
+    function setMoonIcon() {
+      themeIcon.innerHTML = '<path d="M12 3a6 6 1 0 0 9 9 9 9 0 1 1-9-9Z"/>';
     }
   </script>
 </body>
