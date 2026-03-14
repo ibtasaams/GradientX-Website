@@ -2186,6 +2186,390 @@
     .nav-theme-toggle:active svg {
       transform: scale(0.9);
     }
+
+
+      /* ── Reset & scope ─────────────────────────────────── */
+  .ts__section *,
+  .ts__section *::before,
+  .ts__section *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ── Section wrapper ────────────────────────────────── */
+  .ts__section {
+    width: 100%;
+    padding: 100px 24px 120px;
+    background: #0a0a0a;
+    font-family: 'Sora', sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* subtle noise grain */
+  .ts__section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Header ─────────────────────────────────────────── */
+  .ts__header {
+    text-align: center;
+    margin-bottom: 64px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ts__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #e06b3f;
+    margin-bottom: 18px;
+  }
+
+  .ts__eyebrow::before,
+  .ts__eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: #e06b3f;
+    opacity: 0.6;
+  }
+
+  .ts__title {
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    color: #f0ede8;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+
+  .ts__title span {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(224, 107, 63, 0.55);
+  }
+
+  .ts__subtitle {
+    margin-top: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(240, 237, 232, 0.45);
+    max-width: 440px;
+    margin-inline: auto;
+    line-height: 1.65;
+  }
+
+  /* ── Track wrapper ───────────────────────────────────── */
+  .ts__track-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* left / right edge fades — exact same as the reference */
+  .ts__track-wrap::before,
+  .ts__track-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 160px;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .ts__track-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, #0a0a0a 0%, transparent 100%);
+  }
+  .ts__track-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, #0a0a0a 0%, transparent 100%);
+  }
+
+  /* ── Scrollable track ────────────────────────────────── */
+  .ts__track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 120px 28px;
+    cursor: grab;
+    scrollbar-width: none;
+  }
+  .ts__track::-webkit-scrollbar { display: none; }
+  .ts__track.ts--dragging { cursor: grabbing; }
+
+  /* ── Card ────────────────────────────────────────────── */
+  .ts__card {
+    flex: 0 0 340px;
+    min-height: 460px;
+    border-radius: 22px;
+    background: #131313;
+    border: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+    position: relative;
+    scroll-snap-align: center;
+    transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ts__card:hover {
+    border-color: rgba(224, 107, 63, 0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 32px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(224,107,63,0.12);
+  }
+
+  /* ── Photo area ──────────────────────────────────────── */
+  .ts__photo-wrap {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .ts__photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.6s ease;
+    filter: grayscale(20%) contrast(1.05);
+  }
+
+  .ts__card:hover .ts__photo-wrap img {
+    transform: scale(1.05);
+    filter: grayscale(0%) contrast(1.08);
+  }
+
+  /* bottom fade on photo — matches the design reference */
+  .ts__photo-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(19,19,19,0.5) 50%,
+      #131313 100%
+    );
+    z-index: 1;
+  }
+
+  /* floating badge inside photo */
+  .ts__badge {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 5px 12px 5px 7px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .ts__badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+    animation: ts-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes ts-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.55; transform: scale(0.85); }
+  }
+
+  /* ── Card body ───────────────────────────────────────── */
+  .ts__body {
+    padding: 20px 22px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ts__role {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #e06b3f;
+    margin-bottom: 6px;
+  }
+
+  .ts__name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #f0ede8;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+
+  .ts__desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(240, 237, 232, 0.48);
+    flex: 1;
+  }
+
+  /* ── Skills tags ─────────────────────────────────────── */
+  .ts__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 16px;
+  }
+
+  .ts__tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: rgba(240,237,232,0.55);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    padding: 3px 9px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .ts__card:hover .ts__tag {
+    background: rgba(224,107,63,0.08);
+    border-color: rgba(224,107,63,0.2);
+    color: rgba(224,107,63,0.85);
+  }
+
+  /* ── Divider & socials ───────────────────────────────── */
+  .ts__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .ts__learn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: rgba(240,237,232,0.5);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.25s;
+  }
+  .ts__learn:hover { color: #e06b3f; }
+  .ts__learn svg { transition: transform 0.25s; }
+  .ts__learn:hover svg { transform: translateX(3px); }
+
+  .ts__socials {
+    display: flex;
+    gap: 8px;
+  }
+
+  .ts__social {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(240,237,232,0.45);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+  .ts__social:hover {
+    background: rgba(224,107,63,0.12);
+    border-color: rgba(224,107,63,0.3);
+    color: #e06b3f;
+    transform: translateY(-2px);
+  }
+
+  /* ── Dots nav ────────────────────────────────────────── */
+  .ts__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 36px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ts__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, width 0.3s;
+    border: none;
+    padding: 0;
+  }
+  .ts__dot.ts--active {
+    background: #e06b3f;
+    width: 22px;
+    border-radius: 3px;
+  }
+
+  /* ── Card entrance animation ─────────────────────────── */
+  .ts__card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: ts-enter 0.6s forwards;
+  }
+  .ts__card:nth-child(1) { animation-delay: 0.1s; }
+  .ts__card:nth-child(2) { animation-delay: 0.22s; }
+  .ts__card:nth-child(3) { animation-delay: 0.34s; }
+  .ts__card:nth-child(4) { animation-delay: 0.46s; }
+  .ts__card:nth-child(5) { animation-delay: 0.58s; }
+
+  @keyframes ts-enter {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Responsive ──────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .ts__card { flex: 0 0 290px; min-height: 420px; }
+    .ts__photo-wrap { height: 220px; }
+    .ts__track { padding-inline: 60px; }
+    .ts__track-wrap::before,
+    .ts__track-wrap::after { width: 60px; }
+  }
   </style>
 </head>
 
@@ -2198,7 +2582,7 @@
       <a href="#docs">Docs</a>
       <a href="#demos">Demos</a>
       <a href="#build">Build</a>
-      <a href="https://github.com/gideon116/Cpp_ML" target="_blank">GitHub ↗</a>
+      <a href="https://github.com/ibtasaams" target="_blank">GitHub ↗</a>
     </div>
     <div class="nav-right">
       <button class="nav-login">Open Source · C++11+ · MIT/GPL v2</button>
@@ -2236,7 +2620,7 @@
     <a href="#docs" onclick="closeNav()">Docs</a>
     <a href="#demos" onclick="closeNav()">Demos</a>
     <a href="#build" onclick="closeNav()">Build</a>
-    <a href="https://github.com/gideon116/Cpp_ML" target="_blank" onclick="closeNav()">GitHub ↗</a>
+    <a href="https://github.com/ibtasaams" target="_blank" onclick="closeNav()">GitHub ↗</a>
   </div>
 
   <!-- ═══════════ HERO ═══════════ -->
@@ -3450,6 +3834,184 @@
 
   <div class="page-divider"></div>
 
+  <!-- ── SECTION HTML ───────────────────────────────────────────── -->
+<section class="ts__section" aria-label="Meet the Team">
+
+  <div class="ts__header">
+    <p class="ts__eyebrow">The People Behind</p>
+    <h2 class="ts__title">Meet Our <span>Team</span></h2>
+    <p class="ts__subtitle">Craftspeople, thinkers, and builders who turn vision into reality.</p>
+  </div>
+
+  <div class="ts__track-wrap">
+    <div class="ts__track" id="tsTrack">
+
+      <!-- ── CARD 1 ── Co-Founder ───────────────────────────── -->
+      <article class="ts__card">
+        <div class="ts__photo-wrap">
+          <!-- Replace src with your actual image -->
+          <img
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80"
+            alt="Ahmad Raza — Co-Founder & CEO"
+            loading="lazy"
+          >
+          <div class="ts__photo-fade"></div>
+          <span class="ts__badge"><span class="ts__badge-dot"></span>Co-Founder</span>
+        </div>
+        <div class="ts__body">
+          <p class="ts__role">Founder &amp; CEO</p>
+          <h3 class="ts__name">Ahmad Raza</h3>
+          <p class="ts__desc">
+            Visionary architect behind our product strategy. 10+ years shaping digital experiences for global brands.
+          </p>
+          <div class="ts__tags">
+            <span class="ts__tag">Strategy</span>
+            <span class="ts__tag">Product</span>
+            <span class="ts__tag">Leadership</span>
+          </div>
+          <div class="ts__footer">
+            <a href="#" class="ts__learn">
+              View profile
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div class="ts__socials">
+              <a href="#" class="ts__social" aria-label="LinkedIn">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" class="ts__social" aria-label="Twitter/X">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── CARD 2 ── Co-Founder ───────────────────────────── -->
+      <article class="ts__card">
+        <div class="ts__photo-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
+            alt="Sara Khan — Co-Founder & CTO"
+            loading="lazy"
+          >
+          <div class="ts__photo-fade"></div>
+          <span class="ts__badge"><span class="ts__badge-dot"></span>Co-Founder</span>
+        </div>
+        <div class="ts__body">
+          <p class="ts__role">Founder &amp; CTO</p>
+          <h3 class="ts__name">Sara Khan</h3>
+          <p class="ts__desc">
+            Engineering powerhouse. Leads our technical architecture and ensures every product ships at the highest quality.
+          </p>
+          <div class="ts__tags">
+            <span class="ts__tag">Full-Stack</span>
+            <span class="ts__tag">DevOps</span>
+            <span class="ts__tag">AI/ML</span>
+          </div>
+          <div class="ts__footer">
+            <a href="#" class="ts__learn">
+              View profile
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div class="ts__socials">
+              <a href="#" class="ts__social" aria-label="LinkedIn">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" class="ts__social" aria-label="GitHub">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── CARD 3 ── Team Member ───────────────────────────── -->
+      <article class="ts__card">
+        <div class="ts__photo-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=80"
+            alt="Omar Farooq — Lead Designer"
+            loading="lazy"
+          >
+          <div class="ts__photo-fade"></div>
+          <span class="ts__badge"><span class="ts__badge-dot"></span>Team</span>
+        </div>
+        <div class="ts__body">
+          <p class="ts__role">Lead Designer</p>
+          <h3 class="ts__name">Omar Farooq</h3>
+          <p class="ts__desc">
+            Pixel-perfect craftsman. Converts complex problems into elegant, accessible interfaces users love to use.
+          </p>
+          <div class="ts__tags">
+            <span class="ts__tag">UI/UX</span>
+            <span class="ts__tag">Figma</span>
+            <span class="ts__tag">Branding</span>
+          </div>
+          <div class="ts__footer">
+            <a href="#" class="ts__learn">
+              View profile
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div class="ts__socials">
+              <a href="#" class="ts__social" aria-label="Dribbble">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+              </a>
+              <a href="#" class="ts__social" aria-label="Twitter/X">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── CARD 4 ── Team Member (add more as needed) ──────── -->
+      <article class="ts__card">
+        <div class="ts__photo-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
+            alt="Zara Malik — Backend Engineer"
+            loading="lazy"
+          >
+          <div class="ts__photo-fade"></div>
+          <span class="ts__badge"><span class="ts__badge-dot"></span>Team</span>
+        </div>
+        <div class="ts__body">
+          <p class="ts__role">Backend Engineer</p>
+          <h3 class="ts__name">Zara Malik</h3>
+          <p class="ts__desc">
+            Database wizard and API architect. Keeps systems fast, secure, and always available under heavy load.
+          </p>
+          <div class="ts__tags">
+            <span class="ts__tag">Node.js</span>
+            <span class="ts__tag">PostgreSQL</span>
+            <span class="ts__tag">Odoo</span>
+          </div>
+          <div class="ts__footer">
+            <a href="#" class="ts__learn">
+              View profile
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div class="ts__socials">
+              <a href="#" class="ts__social" aria-label="LinkedIn">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="#" class="ts__social" aria-label="GitHub">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /ts__track -->
+  </div><!-- /ts__track-wrap -->
+
+  <!-- Dot navigation -->
+  <div class="ts__dots" id="tsDots" role="tablist" aria-label="Team member navigation"></div>
+
+</section>
+<!-- ── END TEAM SECTION ──────────────────────────────────────── -->
+
   <!-- ═══════════ TEAM ═══════════ -->
   <!-- <section class="section" id="team">
     <div class="rv">
@@ -3549,7 +4111,7 @@
         </div>
         <p class="foot-copy">
           Licensed under GPL v2 · Made by
-          <a href="https://github.com/ibtasaams" target="_blank">gideon116</a>
+          <a href="https://github.com/ibtasaams" target="_blank">Ibtasaam Abbasi</a>
         </p>
       </div>
     </div>
@@ -3701,6 +4263,67 @@
     function setMoonIcon() {
       themeIcon.innerHTML = '<path d="M12 3a6 6 1 0 0 9 9 9 9 0 1 1-9-9Z"/>';
     }
+    (function () {
+  const track  = document.getElementById('tsTrack');
+  const dots   = document.getElementById('tsDots');
+  const cards  = track.querySelectorAll('.ts__card');
+
+  /* ── Build dots ── */
+  cards.forEach((_, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'ts__dot' + (i === 0 ? ' ts--active' : '');
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-label', 'Go to member ' + (i + 1));
+    btn.addEventListener('click', () => scrollTo(i));
+    dots.appendChild(btn);
+  });
+
+  function scrollTo(index) {
+    const card   = cards[index];
+    const offset = card.offsetLeft - track.offsetLeft - (track.clientWidth / 2) + (card.clientWidth / 2);
+    track.scrollTo({ left: offset, behavior: 'smooth' });
+    updateDots(index);
+  }
+
+  function updateDots(active) {
+    dots.querySelectorAll('.ts__dot').forEach((d, i) =>
+      d.classList.toggle('ts--active', i === active));
+  }
+
+  /* ── Sync dots on scroll ── */
+  let scrollTimer;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      let closest = 0, minDist = Infinity;
+      cards.forEach((c, i) => {
+        const center = c.offsetLeft + c.clientWidth / 2;
+        const trackCenter = track.scrollLeft + track.clientWidth / 2;
+        const dist = Math.abs(center - trackCenter);
+        if (dist < minDist) { minDist = dist; closest = i; }
+      });
+      updateDots(closest);
+    }, 60);
+  });
+
+  /* ── Drag to scroll ── */
+  let isDown = false, startX, scrollLeft;
+  track.addEventListener('mousedown', e => {
+    isDown = true;
+    track.classList.add('ts--dragging');
+    startX     = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+  ['mouseup', 'mouseleave'].forEach(ev =>
+    track.addEventListener(ev, () => { isDown = false; track.classList.remove('ts--dragging'); }));
+  track.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x    = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.4;
+    track.scrollLeft = scrollLeft - walk;
+  });
+})();
   </script>
 </body>
 
